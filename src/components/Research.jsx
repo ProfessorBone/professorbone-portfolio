@@ -6,6 +6,7 @@ import EpistemicGovernance from "./papers/EpistemicGovernance";
 import GGIBPart1 from "./papers/GGIBPart1";
 import GGIBPart2 from "./papers/GGIBPart2";
 import GGIBPart3 from "./papers/GGIBPart3";
+import GGIBPart4 from "./papers/GGIBPart4";
 import "../paper.css";
 import "../paper-ggib.css";
 
@@ -21,6 +22,7 @@ export default function Research() {
   if (activePaper === "ggib-1")         return <GGIBPart1 onBack={() => setActivePaper(null)} />;
   if (activePaper === "ggib-2")         return <GGIBPart2 onBack={() => setActivePaper(null)} />;
   if (activePaper === "ggib-3")         return <GGIBPart3 onBack={() => setActivePaper(null)} />;
+  if (activePaper === "ggib-4")         return <GGIBPart4 onBack={() => setActivePaper(null)} />;
 
   return (
     <div className="inner-section">
@@ -96,16 +98,16 @@ export default function Research() {
                 <span className="ggib-dl" style={{ color: "var(--cyan)" }}>Read →</span>
               </div>
 
-              <a
-                href="/papers/GGIB_Part_4.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* Part 4 — inline reader */}
+              <div
                 className="ggib-part"
+                style={{ cursor: "pointer" }}
+                onClick={() => setActivePaper("ggib-4")}
               >
                 <span className="ggib-part-num">Part 4</span>
                 <span className="ggib-part-title">Human Baseline Design</span>
-                <span className="ggib-dl">↓ PDF</span>
-              </a>
+                <span className="ggib-dl" style={{ color: "var(--cyan)" }}>Read →</span>
+              </div>
 
               <a
                 href="/papers/GGIB_Part_5.pdf"
