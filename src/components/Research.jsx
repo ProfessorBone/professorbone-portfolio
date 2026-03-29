@@ -4,6 +4,7 @@ import OrchestratorEpistemicCapture from "./papers/OrchestratorEpistemicCapture"
 import CognitiveHorizon from "./papers/CognitiveHorizon";
 import EpistemicGovernance from "./papers/EpistemicGovernance";
 import GGIBPart1 from "./papers/GGIBPart1";
+import GGIBPart2 from "./papers/GGIBPart2";
 import "../paper.css";
 import "../paper-ggib.css";
 
@@ -17,6 +18,7 @@ export default function Research() {
   if (activePaper === "cognitive")      return <CognitiveHorizon onBack={() => setActivePaper(null)} />;
   if (activePaper === "epistemic")      return <EpistemicGovernance onBack={() => setActivePaper(null)} />;
   if (activePaper === "ggib-1")         return <GGIBPart1 onBack={() => setActivePaper(null)} />;
+  if (activePaper === "ggib-2")         return <GGIBPart2 onBack={() => setActivePaper(null)} />;
 
   return (
     <div className="inner-section">
@@ -70,16 +72,16 @@ export default function Research() {
               </div>
 
               {/* Parts 2–6 — PDF until inline readers are built */}
-              <a
-                href="/papers/GGIB_Part_2.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* Part 2 — inline reader */}
+              <div
                 className="ggib-part"
+                style={{ cursor: "pointer" }}
+                onClick={() => setActivePaper("ggib-2")}
               >
                 <span className="ggib-part-num">Part 2</span>
                 <span className="ggib-part-title">Metacognition Task Family Design</span>
-                <span className="ggib-dl">↓ PDF</span>
-              </a>
+                <span className="ggib-dl" style={{ color: "var(--cyan)" }}>Read →</span>
+              </div>
 
               <a
                 href="/papers/GGIB_Part_3.pdf"
