@@ -51,7 +51,7 @@ export default function Education() {
             <div className="edu-detail">Agentic AI system design and multi-agent architecture</div>
             <div className="edu-detail">Original research — Professor Bone Lab</div>
           </div>
-          <span className="cert-status in-progress">● In Progress</span>
+          <span className="cert-status completes">●Completedss</span>
         </div>
 
         <div className="edu-card">
