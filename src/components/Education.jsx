@@ -63,7 +63,7 @@ export default function Education() {
             <div className="edu-detail">Building with the Claude API — Completed</div>
             <div className="edu-detail">47 study notes in Obsidian vault</div>
           </div>
-          <span className="cert-status in-progress">● In Progress</span>
+          <span className="cert-status in-progress">✓ Completed</span>
         </div>
 
         <div className="edu-card">
