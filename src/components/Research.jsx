@@ -2,14 +2,16 @@ import { useState } from "react";
 import { ggibParts } from "../data/research";
 import AgentStateFramework from "./papers/AgentStateFramework";
 import OrchestratorEpistemicCapture from "./papers/OrchestratorEpistemicCapture";
+import CognitiveHorizon from "./papers/CognitiveHorizon";
 import "../paper.css";
 
 export default function Research() {
   const [ggibOpen, setGgibOpen] = useState(false);
   const [activePaper, setActivePaper] = useState(null);
 
-  if (activePaper === "agent-state")      return <AgentStateFramework onBack={() => setActivePaper(null)} />;
-  if (activePaper === "orchestrator")     return <OrchestratorEpistemicCapture onBack={() => setActivePaper(null)} />;
+  if (activePaper === "agent-state")  return <AgentStateFramework onBack={() => setActivePaper(null)} />;
+  if (activePaper === "orchestrator") return <OrchestratorEpistemicCapture onBack={() => setActivePaper(null)} />;
+  if (activePaper === "cognitive")    return <CognitiveHorizon onBack={() => setActivePaper(null)} />;
 
   return (
     <div className="inner-section">
@@ -50,7 +52,7 @@ export default function Research() {
           )}
         </div>
 
-        {/* Orchestrator Epistemic Capture — inline reader */}
+        {/* Orchestrator Epistemic Capture */}
         <div className="research-card" style={{cursor:"pointer"}} onClick={() => setActivePaper("orchestrator")}>
           <div className="research-num">02</div>
           <div className="research-content">
@@ -62,17 +64,17 @@ export default function Research() {
         </div>
 
         {/* Cognitive Horizon */}
-        <a href="/papers/Cognitive_Horizon_v6.pdf" target="_blank" rel="noopener noreferrer" className="research-card" style={{textDecoration:"none"}}>
+        <div className="research-card" style={{cursor:"pointer"}} onClick={() => setActivePaper("cognitive")}>
           <div className="research-num">03</div>
           <div className="research-content">
             <div className="research-title">Cognitive Horizon: Context Management Theory</div>
             <div className="research-meta">Professor Bone Lab · JHU · Foundational Paper · v6</div>
             <div className="research-abstract">Foundational theory examining how AI agents manage the boundaries of their operational context window — defining the cognitive horizon as the limit beyond which agents cannot accurately reason about prior state.</div>
           </div>
-          <div className="research-arrow">↓ PDF</div>
-        </a>
+          <div className="research-arrow" style={{color:"var(--cyan)",fontSize:"0.75rem",letterSpacing:"0.06em"}}>Read →</div>
+        </div>
 
-        {/* Agent State Framework — inline reader */}
+        {/* Agent State Framework */}
         <div className="research-card" style={{cursor:"pointer"}} onClick={() => setActivePaper("agent-state")}>
           <div className="research-num">04</div>
           <div className="research-content">
