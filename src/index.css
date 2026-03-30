@@ -25,6 +25,22 @@ body {
   min-height: 100vh;
 }
 
+/* ── Professor Bone Avatar Background ── */
+.pb-avatar-bg {
+  position: fixed;
+  top: -60px;
+  left: -80px;
+  width: 520px;
+  height: 520px;
+  background: url('/professor-bone-avatar.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.13;
+  mix-blend-mode: screen;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(2px) saturate(1.4);
+}
+
 /* ── Background Orbs ── */
 .bg-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 .orb { position: absolute; border-radius: 50%; filter: blur(90px); animation: drift linear infinite; }

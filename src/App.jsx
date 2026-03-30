@@ -24,6 +24,7 @@ export default function App() {
         <div className="orb orb-3" />
       </div>
       <div className="grid-overlay" />
+      <div className="pb-avatar-bg" />
 
       {/* Nav */}
       <Nav page={page} setPage={(p) => { setPage(p); window.scrollTo({ top: 0, behavior: "smooth" }); }} />
