@@ -1,6 +1,8 @@
 export default function Hero({ setPage }) {
   return (
     <div className="hero-wrap">
+
+      {/* ── LEFT: Text content ── */}
       <div className="hero-left">
         <div className="hero-badge" style={{opacity:1,animation:"slideDown 0.7s ease 0.1s both"}}>
           <div className="pulse-dot" />
@@ -36,6 +38,17 @@ export default function Hero({ setPage }) {
         </div>
       </div>
 
+      {/* ── CENTER: Avatar ── */}
+      <div className="hero-avatar-wrap" style={{animation:"fadeIn 1s ease 0.5s both"}}>
+        <div className="hero-avatar-glow" />
+        <img
+          src="/professor-bone-avatar.png"
+          alt="Professor Bone"
+          className="hero-avatar-img"
+        />
+      </div>
+
+      {/* ── RIGHT: Glass cards ── */}
       <div className="hero-right" style={{animation:"slideLeft 0.9s ease 0.7s both"}}>
         <div className="glass-card">
           <div className="card-icon">🚛</div>
