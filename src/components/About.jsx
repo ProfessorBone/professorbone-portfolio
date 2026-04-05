@@ -28,11 +28,13 @@ export default function About() {
             ["2017",   "Logistics Mgmt · UPS"],
             ["2022",   "Owner-Operator · LaM Logistics LLC"],
             ["2025",   "Walmart Private Fleet · OTR"],
-            ["EDU",    "Johns Hopkins University"],
+            ["2016",   "A.S. Networking Systems Technology · Daytona State College"],
+            ["2025",   "B.S. Information Technology · Daytona State College"],
+            ["2026",   "Agentic AI Program · Johns Hopkins University"],
+            ["SELF",   "Python for Data Science · Independent Study"],
+            ["CERT",   "CCA · Anthropic (In Progress)"],
             ["LAB",    "Professor Bone Lab"],
-            ["CERT",   "CCA · Anthropic Academy"],
             ["TARGET", "Walmart Global Tech"],
-            ["HW",     "Mac Studio M3 Ultra · 512GB"],
           ].map(([k, v]) => (
             <div key={k} className="identity-detail">
               <span>{k}</span> {v}
