@@ -25,10 +25,10 @@ export default function About() {
           <div className="identity-divider" />
           {[
             ["BASE",   "Tobyhanna, PA · Northeast US"],
+            ["2016",   "A.S. Networking Systems Technology · Daytona State College"],
             ["2017",   "Logistics Mgmt · UPS"],
             ["2022",   "Owner-Operator · LaM Logistics LLC"],
             ["2025",   "Walmart Private Fleet · OTR"],
-            ["2016",   "A.S. Networking Systems Technology · Daytona State College"],
             ["2025",   "B.S. Information Technology · Daytona State College"],
             ["2026",   "Agentic AI Program · Johns Hopkins University"],
             ["SELF",   "Python for Data Science · Independent Study"],
