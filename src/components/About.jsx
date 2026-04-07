@@ -31,13 +31,13 @@ export default function About() {
             ["2025",   "Walmart Private Fleet · OTR"],
             ["2025",   "B.S. Information Technology · Daytona State College"],
             ["2026",   "Agentic AI Program · Johns Hopkins University"],
-            ["GGL",    "Google AI Professional Certification · 2026"],
+            ["2026",   "Google AI Professional Certification"],
             ["SELF",   "Python for Data Science · Independent Study"],
             ["CERT",   "CCA · Anthropic (In Progress)"],
             ["LAB",    "Professor Bone Lab"],
             ["TARGET", "Walmart Global Tech"],
-          ].map(([k, v]) => (
-            <div key={k} className="identity-detail">
+          ].map(([k, v], i) => (
+            <div key={i} className="identity-detail">
               <span>{k}</span> {v}
             </div>
           ))}
