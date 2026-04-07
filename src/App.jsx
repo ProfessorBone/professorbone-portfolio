@@ -10,10 +10,11 @@ import Education  from "./components/Education";
 import Academy    from "./components/Academy";
 import Contact    from "./components/Contact";
 import Continuum  from "./components/Continuum";
+import FreightMind from "./components/FreightMind";
 
 function pageFromPath() {
   const path = window.location.pathname.replace(/^\//, "").replace(/\/$/, "");
-  const valid = ["home","about","projects","research","education","academy","contact","continuum"];
+  const valid = ["home","about","projects","research","education","academy","contact","continuum","freightmind"];
   return valid.includes(path) ? path : "home";
 }
 
@@ -38,15 +39,21 @@ export default function App() {
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
-  // Continuum page gets no nav/footer — full immersive experience
+  // Full-screen immersive pages — no nav/footer
   if (page === "continuum") {
     return (
       <>
-        <div className="bg-layer">
-          <div className="orb orb-1" />
-          <div className="orb orb-2" />
-        </div>
+        <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /></div>
         <Continuum setPage={navigate} />
+      </>
+    );
+  }
+
+  if (page === "freightmind") {
+    return (
+      <>
+        <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /></div>
+        <FreightMind setPage={navigate} />
       </>
     );
   }
@@ -64,9 +71,7 @@ export default function App() {
   return (
     <>
       <div className="bg-layer">
-        <div className="orb orb-1" />
-        <div className="orb orb-2" />
-        <div className="orb orb-3" />
+        <div className="orb orb-1" /><div className="orb orb-2" /><div className="orb orb-3" />
       </div>
       <div className="grid-overlay" />
       <div className="pb-avatar-bg" />
