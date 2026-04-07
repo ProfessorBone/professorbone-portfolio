@@ -1,8 +1,6 @@
 import { projects } from "../data/projects";
 
 export default function Projects({ setPage }) {
-  const others = projects.filter((p) => p.title !== "Continuum");
-
   return (
     <div className="inner-section">
       <div className="section-tag">02 — Projects</div>
@@ -22,7 +20,6 @@ export default function Projects({ setPage }) {
           tabIndex={0}
           onKeyDown={(e) => e.key === "Enter" && setPage && setPage("continuum")}
         >
-          {/* Video background */}
           <div className="continuum-card-media">
             <video
               className="continuum-card-video"
@@ -36,14 +33,11 @@ export default function Projects({ setPage }) {
             <div className="continuum-card-vignette" />
           </div>
 
-          {/* Content */}
           <div className="continuum-card-body">
             <div className="continuum-card-left">
               <div className="continuum-card-id">PACS-ARCH-001 &nbsp;/&nbsp; 2026</div>
               <h3 className="continuum-card-title">CONTINUUM</h3>
-              <p className="continuum-card-sub">
-                A Governed Multi-Agent AI Control System
-              </p>
+              <p className="continuum-card-sub">A Governed Multi-Agent AI Control System</p>
               <p className="continuum-card-desc">
                 Eight specialized agents. 46 architectural decision records.
                 23 failure injection tests. A knowledge graph of 54 entities and
@@ -75,16 +69,16 @@ export default function Projects({ setPage }) {
                 <div className="continuum-stat-label">Cloud Deps</div>
               </div>
               <button className="continuum-cta">
-                Explore Project <span>→</span>
+                <span>Explore Project →</span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* ── OTHER PROJECT CARDS ── */}
-        {others.map((p) => (
-          <div key={p.id} className="project-card">
-            <div className="proj-icon">{p.icon}</div>
+        {/* ── COMING SOON CARDS ── */}
+        {projects.map((p) => (
+          <div key={p.id} className="project-card coming-soon-card">
+            <div className="coming-soon-badge">Coming Soon</div>
             <div className="proj-id">{p.id}</div>
             <div className="proj-title">{p.title}</div>
             <p className="proj-desc">{p.description}</p>
@@ -95,6 +89,7 @@ export default function Projects({ setPage }) {
             </div>
           </div>
         ))}
+
       </div>
     </div>
   );
