@@ -61,8 +61,8 @@
 /* ── CONTINUUM FEATURED CARD ── */
 .continuum-card { grid-column: 1 / -1; position: relative; border-radius: 20px; overflow: hidden; border: 1px solid rgba(0,212,255,0.2); cursor: pointer; transition: border-color 0.4s, box-shadow 0.4s; background: #050A14; }
 .continuum-card:hover { border-color: rgba(0,212,255,0.5); box-shadow: 0 0 60px rgba(0,212,255,0.12), 0 24px 60px rgba(0,0,0,0.6); }
-.continuum-card-media { position: relative; width: 100%; height: 280px; overflow: hidden; background: #050A14; }
-.continuum-card-video { width: 100%; height: 100%; object-fit: contain; object-position: center center; display: block; }
+.continuum-card-media { position: relative; width: 100%; height: 260px; overflow: hidden; }
+.continuum-card-video { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; display: block; }
 .continuum-card-vignette { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(5,10,20,0.30) 0%, rgba(5,10,20,0.10) 40%, rgba(5,10,20,0.85) 85%, rgba(5,10,20,1.00) 100%), linear-gradient(to right, rgba(5,10,20,0.50) 0%, transparent 40%, transparent 60%, rgba(5,10,20,0.50) 100%); }
 .continuum-card-body { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; padding: 32px 36px 36px; margin-top: -60px; position: relative; z-index: 2; }
 .continuum-card-id { font-family: var(--font-mono); font-size: 0.62rem; color: var(--cyan); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; opacity: 0.7; }
@@ -86,8 +86,8 @@
 .fm-card { padding: 0 !important; overflow: hidden; border: 1px solid rgba(255,140,0,0.2) !important; cursor: pointer; background: #050A14 !important; }
 .fm-card::before { background: linear-gradient(90deg, #FF8C00, #FF4500) !important; }
 .fm-card:hover { border-color: rgba(255,140,0,0.5) !important; box-shadow: 0 0 40px rgba(255,140,0,0.1), 0 16px 48px rgba(0,0,0,0.5) !important; }
-.fm-card-media { position: relative; width: 100%; height: 180px; overflow: hidden; background: #050A14; }
-.fm-card-video { width: 100%; height: 100%; object-fit: contain; object-position: center center; display: block; }
+.fm-card-media { position: relative; width: 100%; height: 160px; overflow: hidden; }
+.fm-card-video { width: 100%; height: 100%; object-fit: cover; object-position: center 62%; display: block; }
 .fm-card-vignette { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(5,10,20,0.2) 0%, rgba(5,10,20,0.8) 80%, rgba(5,10,20,1) 100%); }
 .fm-card-body { padding: 20px 22px 24px; }
 .fm-card-id { font-family: var(--font-mono); font-size: 0.58rem; color: rgba(255,140,0,0.6); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px; }
