@@ -32,7 +32,20 @@ export default function Hero({ setPage }) {
         <div className="hero-divider" style={{animation:"slideUp 0.8s ease 0.85s both"}} />
         <div className="hero-stack-label" style={{animation:"slideUp 0.8s ease 0.9s both"}}>Core Stack</div>
         <div className="hero-chips" style={{animation:"slideUp 0.8s ease 1s both"}}>
-          {["Python","FastAPI","Claude API","Multi-Agent Systems","GraphHopper","React","Tailscale","OpenClaw","LangChain","Obsidian MCP"].map(c => (
+          {[
+            "OpenClaw",
+            "Claude API",
+            "Ollama",
+            "TypeScript",
+            "Python",
+            "MLX",
+            "Multi-Agent Systems",
+            "Telegram API",
+            "React",
+            "GraphHopper",
+            "Tailscale",
+            "Obsidian",
+          ].map(c => (
             <span key={c} className="chip">{c}</span>
           ))}
         </div>
@@ -60,7 +73,7 @@ export default function Hero({ setPage }) {
           <div className="card-icon">⚙️</div>
           <div className="card-label">Active Builds</div>
           <div className="card-title">TRIL · PACS · Continuum</div>
-          <div className="card-desc">Governance-first multi-agent architecture<br />Mac Studio M3 Ultra · 512GB unified memory</div>
+          <div className="card-desc">Governance-first multi-agent architecture<br />Mac Studio M3 Ultra · 192GB unified memory</div>
         </div>
         <div className="glass-card">
           <div className="card-icon">🎓</div>
