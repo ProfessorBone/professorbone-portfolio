@@ -13,7 +13,7 @@ import Contact   from "./components/Contact";
 // Derive page key from URL path
 function pageFromPath() {
   const path = window.location.pathname.replace(/^\//, "").replace(/\/$/, "");
-  const valid = ["home","about","projects","research","education","academy","contact"];
+  const valid = ["home","about","projects","research","education","academy","contact","continuum"];
   return valid.includes(path) ? path : "home";
 }
 
@@ -36,21 +36,19 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
     window.addEventListener("popstate", onPopState);
-
-    // Replace the initial history entry so it carries the page key
     window.history.replaceState({ page }, "", window.location.pathname);
-
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
   const pages = {
     home:      <Hero setPage={navigate} />,
     about:     <About />,
-    projects:  <Projects />,
+    projects:  <Projects setPage={navigate} />,
     research:  <Research />,
     education: <Education />,
     academy:   <Academy />,
     contact:   <Contact />,
+    continuum: <div style={{minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",color:"#00D4FF",fontFamily:"Syne Mono,monospace"}}>Continuum page coming soon</div>,
   };
 
   return (
