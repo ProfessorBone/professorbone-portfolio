@@ -1,0 +1,141 @@
+
+/* ══════════════════════════════════════════════════════════
+   BUILD GUIDE PAGE (bg-*)
+══════════════════════════════════════════════════════════ */
+
+.bg-page { position: relative; z-index: 1; background: var(--bg); color: var(--text-primary); }
+
+/* ── Hero ── */
+.bg-hero { padding: 120px 80px 80px; position: relative; }
+.bg-hero::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); }
+.bg-hero-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: center; }
+.bg-hero-badge { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.22em; color: var(--cyan); text-transform: uppercase; border: 1px solid rgba(0,212,255,0.25); padding: 6px 16px; border-radius: 2px; display: inline-block; margin-bottom: 24px; background: rgba(0,212,255,0.04); }
+.bg-hero-title { font-family: var(--font-display); font-size: clamp(3rem, 6vw, 6rem); font-weight: 800; line-height: 0.95; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 12px; }
+.bg-hero-tagline { font-family: var(--font-mono); font-size: 0.88rem; letter-spacing: 0.22em; color: var(--cyan); text-transform: uppercase; margin-bottom: 20px; }
+.bg-hero-sub { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); max-width: 520px; margin-bottom: 40px; font-weight: 300; }
+.bg-hero-stats { display: flex; gap: 32px; }
+.bg-stat { text-align: left; }
+.bg-stat-num { font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; color: var(--cyan); line-height: 1; text-shadow: 0 0 20px rgba(0,212,255,0.35); }
+.bg-stat-label { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.16em; color: var(--text-muted); text-transform: uppercase; margin-top: 4px; }
+
+/* ── Book cover ── */
+.bg-hero-right { position: relative; flex-shrink: 0; }
+.bg-book-cover { position: relative; width: 260px; }
+.bg-cover-img { width: 100%; display: block; border-radius: 4px 12px 12px 4px; box-shadow: 8px 8px 40px rgba(0,0,0,0.7), -2px 0 0 rgba(0,212,255,0.1), 2px 0 6px rgba(0,0,0,0.5); transition: transform 0.4s ease, box-shadow 0.4s ease; }
+.bg-cover-img:hover { transform: perspective(800px) rotateY(-6deg) translateY(-4px); box-shadow: 16px 16px 60px rgba(0,0,0,0.8), 0 0 40px rgba(0,212,255,0.15); }
+.bg-book-spine { position: absolute; left: -8px; top: 2%; height: 96%; width: 8px; background: linear-gradient(180deg, rgba(0,212,255,0.6) 0%, rgba(0,212,255,0.2) 50%, rgba(0,212,255,0.5) 100%); border-radius: 2px 0 0 2px; }
+.bg-book-shadow { position: absolute; bottom: -16px; left: 8px; right: -8px; height: 20px; background: radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, transparent 70%); filter: blur(8px); }
+
+/* ── Context strip ── */
+.bg-context-strip { background: rgba(0,212,255,0.04); border-top: 1px solid rgba(0,212,255,0.12); border-bottom: 1px solid rgba(0,212,255,0.12); padding: 28px 80px; text-align: center; }
+.bg-context-strip p { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; color: rgba(237,242,250,0.55); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+/* ── Flipbook section ── */
+.bg-flipbook-section { padding: 80px 80px 60px; background: #080E1C; position: relative; }
+.bg-flipbook-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--purple), transparent); }
+.bg-flipbook-label { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.22em; color: var(--cyan); text-transform: uppercase; margin-bottom: 12px; text-align: center; }
+.bg-flipbook-label::before { content: '// '; color: var(--text-muted); }
+.bg-flipbook-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 800; color: var(--text-primary); margin-bottom: 48px; text-align: center; }
+
+/* ── Book stage ── */
+.bg-book-stage { display: flex; align-items: center; justify-content: center; gap: 32px; margin-bottom: 32px; }
+.bg-nav-btn { width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: var(--text-primary); font-size: 1.8rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.25s; flex-shrink: 0; }
+.bg-nav-btn:hover:not(.bg-nav-disabled) { background: rgba(0,212,255,0.1); border-color: var(--cyan); color: var(--cyan); }
+.bg-nav-disabled { opacity: 0.2; cursor: default; }
+
+/* ── Book wrap (stacked pages illusion) ── */
+.bg-book-wrap { position: relative; width: 520px; }
+.bg-page-stack { position: absolute; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; }
+.bg-stack-back { inset: 8px -8px -8px 8px; border-radius: 3px; }
+.bg-stack-mid  { inset: 4px -4px -4px 4px; border-radius: 3px; }
+
+/* ── Active page card ── */
+.bg-page-card { position: relative; background: rgba(10,18,36,0.95); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 44px 48px 56px; min-height: 360px; transform-origin: left center; transition: box-shadow 0.3s; box-shadow: 0 12px 48px rgba(0,0,0,0.5); overflow: hidden; }
+.bg-page-card:hover { box-shadow: 0 16px 60px rgba(0,0,0,0.6); }
+
+/* ── Page flip animations ── */
+.bg-page-idle    { animation: none; }
+.bg-page-flip-out { animation: bgFlipOut 0.4s ease-in forwards; }
+.bg-page-flip-in  { animation: bgFlipIn  0.42s ease-out forwards; }
+
+@keyframes bgFlipOut {
+  0%   { transform: perspective(1400px) rotateY(0deg);    opacity: 1; }
+  60%  { transform: perspective(1400px) rotateY(-70deg);  opacity: 0.3; }
+  100% { transform: perspective(1400px) rotateY(-90deg);  opacity: 0; }
+}
+@keyframes bgFlipIn {
+  0%   { transform: perspective(1400px) rotateY(90deg);  opacity: 0; }
+  40%  { transform: perspective(1400px) rotateY(20deg);  opacity: 0.6; }
+  100% { transform: perspective(1400px) rotateY(0deg);   opacity: 1; }
+}
+
+/* ── Page accent bar ── */
+.bg-page-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.bg-accent-cyan   { background: linear-gradient(90deg, var(--cyan), transparent); }
+.bg-accent-purple { background: linear-gradient(90deg, var(--purple), transparent); }
+
+/* ── Page content ── */
+.bg-page-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.bg-page-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.2em; color: var(--cyan); text-transform: uppercase; }
+.bg-page-count { font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-muted); }
+.bg-page-title { font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 800; line-height: 1.1; color: var(--text-primary); margin-bottom: 16px; white-space: pre-line; }
+.bg-page-divider { width: 48px; height: 2px; background: linear-gradient(90deg, var(--cyan), transparent); margin-bottom: 20px; }
+.bg-page-body { font-size: 0.9rem; line-height: 1.8; color: var(--text-secondary); font-weight: 300; white-space: pre-line; }
+
+/* ── Page curl ── */
+.bg-page-curl { position: absolute; bottom: 0; right: 0; width: 0; height: 0; border-style: solid; border-width: 0 0 28px 28px; border-color: transparent transparent var(--bg) transparent; opacity: 0.6; }
+
+/* ── Dots ── */
+.bg-dots { display: flex; justify-content: center; gap: 10px; }
+.bg-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.12); border: none; cursor: pointer; transition: all 0.25s; padding: 0; }
+.bg-dot-active { background: var(--cyan); box-shadow: 0 0 8px rgba(0,212,255,0.5); transform: scale(1.2); }
+.bg-dot:hover:not(.bg-dot-active) { background: rgba(255,255,255,0.3); }
+
+/* ── Who it's for ── */
+.bg-for-section { padding: 80px 0; background: var(--bg); position: relative; }
+.bg-for-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); }
+.bg-container { max-width: 1140px; margin: 0 auto; padding: 0 80px; }
+.bg-for-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; color: var(--text-primary); margin-bottom: 40px; }
+.bg-for-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.bg-for-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 24px 20px; transition: all 0.3s; }
+.bg-for-card:hover { border-color: rgba(0,212,255,0.2); background: rgba(0,212,255,0.03); transform: translateY(-3px); }
+.bg-for-icon { font-size: 1.6rem; margin-bottom: 12px; }
+.bg-for-who { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--cyan); margin-bottom: 8px; }
+.bg-for-desc { font-size: 0.78rem; line-height: 1.65; color: var(--text-secondary); }
+
+/* ── Closing ── */
+.bg-close-section { background: #080E1C; padding: 100px 0; position: relative; }
+.bg-close-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--purple), transparent); }
+.bg-close-line { font-family: var(--font-mono); font-size: clamp(0.8rem, 1.4vw, 0.95rem); letter-spacing: 0.1em; color: rgba(237,242,250,0.4); font-style: italic; margin-bottom: 6px; }
+.bg-close-final { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 4rem); font-weight: 800; color: var(--text-primary); margin-top: 28px; text-shadow: 0 0 40px rgba(0,212,255,0.2); letter-spacing: 0.04em; }
+.bg-close-credit { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.18em; color: var(--text-muted); margin-top: 36px; text-transform: uppercase; }
+
+/* ── Nav Build Guide button ── */
+.nav-build-guide { font-size: 0.78rem !important; color: var(--cyan) !important; letter-spacing: 0.08em !important; font-family: var(--font-body) !important; background: none !important; border: 1px solid rgba(0,212,255,0.3) !important; border-radius: 4px !important; padding: 5px 12px !important; cursor: pointer !important; transition: all 0.22s !important; }
+.nav-build-guide::after { display: none !important; }
+.nav-build-guide:hover, .nav-build-guide.active { background: rgba(0,212,255,0.08) !important; border-color: var(--cyan) !important; color: var(--cyan) !important; }
+
+/* ── Responsive ── */
+@media(max-width:1024px) {
+  .bg-hero { padding: 120px 40px 80px; }
+  .bg-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .bg-hero-right { display: flex; justify-content: center; }
+  .bg-book-wrap { width: 420px; }
+  .bg-context-strip { padding: 24px 40px; }
+  .bg-flipbook-section { padding: 60px 40px; }
+  .bg-for-grid { grid-template-columns: 1fr 1fr; }
+  .bg-container { padding: 0 40px; }
+}
+@media(max-width:640px) {
+  .bg-hero { padding: 100px 24px 60px; }
+  .bg-book-wrap { width: 300px; }
+  .bg-page-card { padding: 28px 28px 40px; min-height: 300px; }
+  .bg-book-stage { gap: 12px; }
+  .bg-nav-btn { width: 40px; height: 40px; font-size: 1.4rem; }
+  .bg-hero-stats { gap: 20px; flex-wrap: wrap; }
+  .bg-for-grid { grid-template-columns: 1fr; }
+  .bg-context-strip { padding: 20px 24px; }
+  .bg-flipbook-section { padding: 50px 24px; }
+  .bg-container { padding: 0 24px; }
+  .bg-for-section { padding: 60px 0; }
+}

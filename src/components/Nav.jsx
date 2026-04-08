@@ -18,6 +18,14 @@ export default function Nav({ page, setPage }) {
           </li>
         ))}
         <li>
+          <button
+            className={`nav-build-guide ${page === "buildguide" ? "active" : ""}`}
+            onClick={() => setPage("buildguide")}
+          >
+            Build Guide
+          </button>
+        </li>
+        <li>
           <button className="nav-cta" onClick={() => setPage("contact")}>
             Let's Talk
           </button>

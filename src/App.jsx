@@ -11,10 +11,11 @@ import Academy    from "./components/Academy";
 import Contact    from "./components/Contact";
 import Continuum  from "./components/Continuum";
 import FreightMind from "./components/FreightMind";
+import BuildGuide from "./components/BuildGuide";
 
 function pageFromPath() {
   const path = window.location.pathname.replace(/^\//, "").replace(/\/$/, "");
-  const valid = ["home","about","projects","research","education","academy","contact","continuum","freightmind"];
+  const valid = ["home","about","projects","research","education","academy","contact","continuum","freightmind","buildguide"];
   return valid.includes(path) ? path : "home";
 }
 
@@ -54,6 +55,15 @@ export default function App() {
       <>
         <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /></div>
         <FreightMind setPage={navigate} />
+      </>
+    );
+  }
+
+  if (page === "buildguide") {
+    return (
+      <>
+        <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /></div>
+        <BuildGuide setPage={navigate} />
       </>
     );
   }
