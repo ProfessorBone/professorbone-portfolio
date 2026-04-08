@@ -69,7 +69,7 @@ Seven universal event classes cover every agentic architecture: Perception, Anal
 
 In a multi-agent system with n agents and moderate connectivity, directed boundaries scale roughly with n times n minus one. Each boundary hosts multiple drift modes. Adding agents increases drift surfaces faster than it increases coordination benefit — unless validation scales with it.
 
-The guide introduces the Integrity Monitor, pre-scale checklists, contract enforcement, edge guards, and decision lineage logging. These are not optional refinements. They are the price of a system that can grow without collapsing under its own complexity.`,
+The guide introduces the Integrity Monitor, pre-scale checklists, contract enforcement, edge guards, and decision lineage logging. These are not optional refinements. They are the price of a system that can grow without collapsing.`,
     accent: "cyan",
   },
   {
@@ -151,6 +151,88 @@ export default function BuildGuide({ setPage }) {
         </div>
       </section>
 
+      {/* ── ORIGIN STORY ── */}
+      <section className="bg-origin-section">
+        <div className="bg-origin-inner">
+
+          <div className="bg-origin-left">
+            <div className="bg-origin-eyebrow">// how this started</div>
+            <h2 className="bg-origin-title">Written at 65 MPH</h2>
+            <div className="bg-origin-rule" />
+            <p className="bg-origin-body">
+              It started with notes.
+            </p>
+            <p className="bg-origin-body">
+              Research papers, read slowly, with a notebook open beside them. The papers were dense
+              in the right places and silent in the wrong ones. They showed one step and assumed
+              you'd figure out the rest. So that became the work — filling in what came before each
+              concept and reasoning through what had to come after.
+            </p>
+            <p className="bg-origin-body">
+              The field was moving too fast for any book to stay relevant. A guide built around a
+              specific framework would be obsolete before it finished printing. That recognition
+              changed the goal entirely. Not <em>"how to use LangChain."</em> Not <em>"how to configure
+              CrewAI."</em> Something underneath those things — the principles that would survive the
+              next framework wave, and the one after that.
+            </p>
+            <p className="bg-origin-body">
+              Most of the actual thinking happened in a truck cab.
+            </p>
+            <p className="bg-origin-body">
+              Load after load. Highway after highway. Podcasts about distributed systems playing
+              through a headset at 65 miles per hour. YouTube videos on transformer architecture
+              queued up at truck stops. Notes written in parking lots after long hauls, when the
+              ideas had finally settled enough to put on paper.
+            </p>
+            <p className="bg-origin-body">
+              There were long stretches where none of it made sense. Papers that wouldn't click on
+              the first read, or the fifth. Concepts that only landed six months later — when
+              building something revealed exactly why the concept had to exist.
+            </p>
+            <p className="bg-origin-body">
+              That is also in the guide. The understanding that confusion is not the opposite of
+              learning. It is the beginning of it.
+            </p>
+            <div className="bg-origin-quote">
+              "Not a tutorial. A field manual for people willing to think through what they're
+              building — written by someone who learned most of it while moving."
+            </div>
+          </div>
+
+          <div className="bg-origin-right">
+            <div className="bg-origin-card">
+              <div className="bg-origin-card-label">The Work Behind It</div>
+              <div className="bg-origin-card-divider" />
+              {[
+                { icon: "📄", label: "Starting point", val: "Research papers & raw notes" },
+                { icon: "🧠", label: "Method", val: "Reasoning forward from first principles" },
+                { icon: "⏱️", label: "Duration", val: "Over one year of active building" },
+                { icon: "🚛", label: "Primary workspace", val: "The cab of an 18-wheeler" },
+                { icon: "🎧", label: "Study material", val: "Podcasts, videos, papers on the road" },
+                { icon: "🔨", label: "Proof of concept", val: "Continuum — a live production system" },
+              ].map(i => (
+                <div key={i.label} className="bg-origin-item">
+                  <span className="bg-origin-item-icon">{i.icon}</span>
+                  <div>
+                    <div className="bg-origin-item-label">{i.label}</div>
+                    <div className="bg-origin-item-val">{i.val}</div>
+                  </div>
+                </div>
+              ))}
+              <div className="bg-origin-card-footer">
+                The guide is the residue of everything that didn't make sense until it did.
+              </div>
+            </div>
+
+            <div className="bg-origin-principle">
+              <div className="bg-origin-principle-label">Core design decision</div>
+              <p>Build around principles that survive technological change — not frameworks that won't.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* ── CONTEXT STRIP ── */}
       <div className="bg-context-strip">
         <p>
@@ -177,7 +259,6 @@ export default function BuildGuide({ setPage }) {
           <div className="bg-book-wrap">
             <div className="bg-page-stack bg-stack-back" />
             <div className="bg-page-stack bg-stack-mid" />
-
             <div className={`bg-page-card bg-page-${animState}`}>
               <div className={`bg-page-accent bg-accent-${p.accent}`} />
               <div className="bg-page-meta">
