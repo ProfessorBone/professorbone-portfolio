@@ -204,15 +204,14 @@ export default function BuildGuide({ setPage }) {
               <div className="bg-origin-card-label">The Work Behind It</div>
               <div className="bg-origin-card-divider" />
               {[
-                { icon: "📄", label: "Starting point", val: "Research papers & raw notes" },
-                { icon: "🧠", label: "Method", val: "Reasoning forward from first principles" },
-                { icon: "⏱️", label: "Duration", val: "Over one year of active building" },
-                { icon: "🚛", label: "Primary workspace", val: "The cab of an 18-wheeler" },
-                { icon: "🎧", label: "Study material", val: "Podcasts, videos, papers on the road" },
-                { icon: "🔨", label: "Proof of concept", val: "Continuum — a live production system" },
+                { label: "Starting point", val: "Research papers & raw notes" },
+                { label: "Method", val: "Reasoning forward from first principles" },
+                { label: "Duration", val: "Over one year of active building" },
+                { label: "Primary workspace", val: "The cab of an 18-wheeler" },
+                { label: "Study material", val: "Podcasts, videos, papers on the road" },
+                { label: "Proof of concept", val: "Continuum — a live production system" },
               ].map(i => (
                 <div key={i.label} className="bg-origin-item">
-                  <span className="bg-origin-item-icon">{i.icon}</span>
                   <div>
                     <div className="bg-origin-item-label">{i.label}</div>
                     <div className="bg-origin-item-val">{i.val}</div>
@@ -301,13 +300,12 @@ export default function BuildGuide({ setPage }) {
           <h2 className="bg-for-title">Built for Engineers<br />Ready to Build Real Systems</h2>
           <div className="bg-for-grid">
             {[
-              { icon: "🧱", who: "Working engineers", desc: "Comfortable with Python, FastAPI, basic async. Ready to go beyond prompt engineering into system design." },
-              { icon: "🏗️", who: "Enterprise builders", desc: "Designing multi-agent infrastructure that needs to survive production — governance, compliance, cost control included." },
-              { icon: "🔬", who: "AGI researchers", desc: "Grounding theoretical architecture in concrete implementation. The guide maps directly to the cognitive blueprint AGI labs use." },
-              { icon: "🚛", who: "Non-traditional engineers", desc: "People who came to AI from operations, logistics, or other fields. No ML math required — this is system design." },
+              { who: "Working engineers", desc: "Comfortable with Python, FastAPI, basic async. Ready to go beyond prompt engineering into system design." },
+              { who: "Enterprise builders", desc: "Designing multi-agent infrastructure that needs to survive production — governance, compliance, cost control included." },
+              { who: "AGI researchers", desc: "Grounding theoretical architecture in concrete implementation. The guide maps directly to the cognitive blueprint AGI labs use." },
+              { who: "Non-traditional engineers", desc: "People who came to AI from operations, logistics, or other fields. No ML math required — this is system design." },
             ].map(f => (
               <div key={f.who} className="bg-for-card">
-                <div className="bg-for-icon">{f.icon}</div>
                 <div className="bg-for-who">{f.who}</div>
                 <p className="bg-for-desc">{f.desc}</p>
               </div>

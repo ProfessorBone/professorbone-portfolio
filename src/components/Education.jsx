@@ -12,7 +12,7 @@ export default function Education() {
       <div className="edu-grid" style={{marginBottom:"48px"}}>
         <div className="edu-card featured">
           <div>
-            <div className="edu-badge"><span style={{color:"var(--cyan)"}}>★</span> Bachelor of Science</div>
+            <div className="edu-badge">Bachelor of Science</div>
             <div className="edu-institution">Daytona State College</div>
             <div className="edu-program">B.S. — Information Technology</div>
             <div className="edu-details">
@@ -20,9 +20,8 @@ export default function Education() {
               <div className="edu-detail">Foundation for AI engineering and systems architecture</div>
             </div>
             <br />
-            <span className="cert-status complete">✓ Conferred</span>
+            <span className="cert-status complete">Conferred</span>
           </div>
-          <div className="edu-icon">🎓</div>
         </div>
 
         <div className="edu-card featured">
@@ -35,23 +34,22 @@ export default function Education() {
               <div className="edu-detail">Underpins Tailscale mesh and edge node infrastructure work</div>
             </div>
             <br />
-            <span className="cert-status complete">✓ Conferred</span>
+            <span className="cert-status complete">Conferred</span>
           </div>
-          <div className="edu-icon">🌐</div>
         </div>
       </div>
 
       <div className="edu-section-label">Certifications</div>
       <div className="edu-grid">
         <div className="edu-card">
-          <div className="edu-badge"><span style={{color:"var(--cyan)"}}>★</span> Graduate Certificate</div>
+          <div className="edu-badge">Graduate Certificate</div>
           <div className="edu-institution">Johns Hopkins University</div>
           <div className="edu-program">Agentic AI Certificate Program</div>
           <div className="edu-details" style={{marginBottom:"18px"}}>
             <div className="edu-detail">Agentic AI system design and multi-agent architecture</div>
             <div className="edu-detail">Original research — Professor Bone Lab</div>
           </div>
-          <span className="cert-status complete">✓ Completed</span>
+          <span className="cert-status complete">Completed</span>
         </div>
 
         <div className="edu-card">
@@ -63,11 +61,11 @@ export default function Education() {
             <div className="edu-detail">Building with the Claude API — Completed</div>
             <div className="edu-detail">47 study notes in Obsidian vault</div>
           </div>
-          <span className="cert-status in-progress">✓ Completed</span>
+          <span className="cert-status in-progress">Completed</span>
         </div>
 
         <div className="edu-card">
-          <div className="edu-badge">🎓 Great Learning</div>
+          <div className="edu-badge">Great Learning</div>
           <div className="edu-institution">Advanced Python: From Analytics to AI</div>
           <div className="edu-program">Certificate Program · August 2025</div>
           <div className="edu-details" style={{marginBottom:"18px"}}>
@@ -79,7 +77,7 @@ export default function Education() {
               </a>
             </div>
           </div>
-          <span className="cert-status complete">✓ Completed Aug 2025</span>
+          <span className="cert-status complete">Completed Aug 2025</span>
         </div>
 
         <div className="edu-card">
@@ -95,7 +93,7 @@ export default function Education() {
               </a>
             </div>
           </div>
-          <span className="cert-status complete">✓ Completed Jul 2024</span>
+          <span className="cert-status complete">Completed Jul 2024</span>
         </div>
       </div>
     </div>
