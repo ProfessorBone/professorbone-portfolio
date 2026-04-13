@@ -17,6 +17,9 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+/* Suppress Chrome text-fragment highlight injected by Google search results */
+::target-text { background-color: transparent; color: inherit; }
+
 body {
   background: var(--bg);
   color: var(--text-primary);
