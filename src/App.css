@@ -406,6 +406,10 @@
 .services-closing p { font-size: 0.94rem; color: var(--text-secondary); line-height: 1.82; margin-bottom: 10px; font-weight: 300; }
 .services-closing p:last-child { margin-bottom: 0; }
 .services-closing-em { color: var(--text-primary) !important; font-weight: 500 !important; font-style: italic; }
+.services-heading { line-height: 1.0 !important; font-weight: 800 !important; }
+.services-cta { margin-top: 72px; padding: 48px 40px; text-align: center; border-top: 1px solid var(--glass-border); }
+.services-cta-heading { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: var(--text-primary); margin-bottom: 14px; }
+.services-cta-body { font-size: 0.96rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
 
 /* ── Global responsive ── */
 @media(max-width:1100px) {

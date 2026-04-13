@@ -6,12 +6,15 @@ export default function Services({ setPage }) {
     <div className="inner-section">
       <Seo {...SEO_ROUTES.services} />
       <div className="section-tag">06 — Services</div>
-      <h1 className="section-heading">Governance-First<br />AI Systems</h1>
+      <h1 className="section-heading services-heading">Governance-First<br />AI Systems</h1>
       <p className="section-sub">
         I design AI systems where governance is structural, not optional. Every system is constraint-governed, role-defined, and built to operate reliably under real conditions.
       </p>
       <p className="services-bridge">
         This work is delivered through governed architectures, agentic applications, and multi-agent systems designed for real operational environments.
+      </p>
+      <p className="services-bridge">
+        These systems are used to guide users, automate workflows, and support decision-making in real operational environments.
       </p>
 
       {/* ── Primary Service ── */}
@@ -51,7 +54,10 @@ export default function Services({ setPage }) {
         <div className="services-applied-card">
           <div className="services-card-kicker">Multi-Agent Systems Design</div>
           <p className="services-card-body">
-            Multi-agent systems are used when single-agent architectures are no longer sufficient. When coordination, scale, or operational complexity requires it, I design multi-agent systems where every agent operates within defined boundaries and participates in a governed system of interaction.
+            Multi-agent systems are used when single-agent architectures are no longer sufficient.
+          </p>
+          <p className="services-card-body">
+            When coordination, scale, or operational complexity requires it, I design multi-agent systems where each agent operates within defined boundaries and participates in a governed system of interaction.
           </p>
           <p className="services-card-body">
             Each agent has a role, a scope, and enforced constraints. Orchestration is explicit. Communication is structured. Behavior is controlled at the system level, not left to emergence.
@@ -84,6 +90,9 @@ export default function Services({ setPage }) {
           <p className="services-card-body">
             I build domain-bounded agentic applications designed to solve specific operational problems. These are not generic chat interfaces. They are software systems with embedded AI agents that guide workflows, support decisions, and move users to the correct next step.
           </p>
+          <p className="services-card-body">
+            AEGIS is an example of this approach: a governed, domain-bounded system designed to guide users through structured workflows.
+          </p>
           <div className="services-includes-label">What this includes</div>
           <ul className="services-list">
             <li>Single-agent architecture design with explicit domain boundaries</li>
@@ -108,7 +117,10 @@ export default function Services({ setPage }) {
             Every retrieval system I build starts from one principle: the system must know when it does not have sufficient information to answer. Without that boundary, RAG becomes a confidence engine for bad data.
           </p>
           <p className="services-support-body">
-            I design retrieval pipelines that connect agents to approved knowledge sources and enforce answer integrity. Document ingestion, structured chunking, vector search, relevance evaluation, confidence scoring, and citation-aware response generation. Each system is built to surface what it knows, flag what it does not, and never fabricate the difference.
+            I design retrieval pipelines that connect agents to approved knowledge sources and enforce answer integrity. This includes document ingestion, structured chunking, vector search, relevance evaluation, confidence scoring, and citation-aware response generation.
+          </p>
+          <p className="services-support-body">
+            Each system is built to surface what it knows, flag what it does not, and never fabricate the difference.
           </p>
         </div>
 
@@ -137,6 +149,13 @@ export default function Services({ setPage }) {
       <div className="services-closing">
         <p>Most systems I build are intentionally single-agent and domain-bounded for reliability. Multi-agent architectures are deployed when coordination, scale, or system complexity requires it.</p>
         <p className="services-closing-em">In every case, governance comes first.</p>
+      </div>
+
+      {/* ── CTA ── */}
+      <div className="services-cta">
+        <h2 className="services-cta-heading">Let's Build Something Real</h2>
+        <p className="services-cta-body">If you need an AI system that operates reliably under real constraints, let's talk.</p>
+        <button className="btn-primary" onClick={() => setPage("contact")}>Let's Talk</button>
       </div>
     </div>
   );
