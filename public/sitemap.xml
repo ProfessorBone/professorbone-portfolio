@@ -2,103 +2,103 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core pages -->
   <url>
-    <loc>https://professorbone.com/</loc>
+    <loc>https://www.professorbone.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/about</loc>
+    <loc>https://www.professorbone.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/projects</loc>
+    <loc>https://www.professorbone.com/projects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/research</loc>
+    <loc>https://www.professorbone.com/research</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/education</loc>
+    <loc>https://www.professorbone.com/education</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/academy</loc>
+    <loc>https://www.professorbone.com/academy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/contact</loc>
+    <loc>https://www.professorbone.com/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/continuum</loc>
+    <loc>https://www.professorbone.com/continuum</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/freightmind</loc>
+    <loc>https://www.professorbone.com/freightmind</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/buildguide</loc>
+    <loc>https://www.professorbone.com/buildguide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Research papers -->
   <url>
-    <loc>https://professorbone.com/research/agent-state</loc>
+    <loc>https://www.professorbone.com/research/agent-state</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/research/orchestrator</loc>
+    <loc>https://www.professorbone.com/research/orchestrator</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/research/cognitive</loc>
+    <loc>https://www.professorbone.com/research/cognitive</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/research/epistemic</loc>
+    <loc>https://www.professorbone.com/research/epistemic</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/research/ggib-1</loc>
+    <loc>https://www.professorbone.com/research/ggib-1</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/research/ggib-2</loc>
+    <loc>https://www.professorbone.com/research/ggib-2</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/research/ggib-3</loc>
+    <loc>https://www.professorbone.com/research/ggib-3</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/research/ggib-4</loc>
+    <loc>https://www.professorbone.com/research/ggib-4</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/research/ggib-5</loc>
+    <loc>https://www.professorbone.com/research/ggib-5</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://professorbone.com/research/ggib-6</loc>
+    <loc>https://www.professorbone.com/research/ggib-6</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

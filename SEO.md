@@ -220,7 +220,7 @@ After deploying to production:
 
 | Setting | Location | Value |
 |---|---|---|
-| Canonical base URL | `src/seoData.js` line 2 | `https://professorbone.com` |
+| Canonical base URL | `src/seoData.js` line 2 | `https://www.professorbone.com` |
 | Default OG image | `src/seoData.js` line 3 | `/professor-bone-avatar.png` |
 | Valid page routes | `src/App.jsx` — `VALID_PAGES` | 10 routes |
 | Valid paper sub-routes | `src/App.jsx` — `VALID_PAPERS` | 10 paper IDs |

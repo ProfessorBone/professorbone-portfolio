@@ -1,5 +1,5 @@
 // Update BASE_URL to match the live domain before deploying.
-export const BASE_URL = 'https://professorbone.com'
+export const BASE_URL = 'https://www.professorbone.com'
 export const DEFAULT_OG_IMAGE = `${BASE_URL}/professor-bone-avatar.png`
 
 const PERSON_REF = { '@id': `${BASE_URL}/#person` }
