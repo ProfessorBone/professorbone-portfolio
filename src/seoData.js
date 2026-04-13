@@ -151,4 +151,110 @@ export const SEO_ROUTES = {
       numberOfPages: 172,
     },
   },
+
+  // ── Research paper sub-routes (/research/[id]) ──────────────────────────
+  // Each paper is individually addressable and indexable.
+  // Keys use slash notation matching the URL sub-path.
+
+  'research/agent-state': {
+    title: 'Agent State Framework — Professor Bone Lab · JHU',
+    description:
+      'Defines a formal state model for autonomous AI agents: belief states, goal hierarchies, action affordances, and operational mode transitions in governed multi-agent systems.',
+    canonical: '/research/agent-state',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'ScholarlyArticle',
+      name: 'Agent State in Agentic AI Systems',
+      author: PERSON_REF,
+      url: `${BASE_URL}/research/agent-state`,
+      publisher: 'Professor Bone Lab',
+    },
+  },
+
+  'research/orchestrator': {
+    title: 'Orchestrator Epistemic Capture — Professor Bone Lab · JHU',
+    description:
+      'Examines the failure mode where an orchestrating agent\'s belief state becomes the primary constraint on downstream behavior, introducing systematic bias into multi-agent pipelines.',
+    canonical: '/research/orchestrator',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'ScholarlyArticle',
+      name: 'Orchestrator Epistemic Capture',
+      author: PERSON_REF,
+      url: `${BASE_URL}/research/orchestrator`,
+      publisher: 'Professor Bone Lab',
+    },
+  },
+
+  'research/cognitive': {
+    title: 'Cognitive Horizon — Professor Bone Lab · JHU',
+    description:
+      'A formal framework for the temporal and contextual limits of AI agent reasoning: where knowledge degrades, where attention saturates, and how systems should behave at the edge of their cognitive horizon.',
+    canonical: '/research/cognitive',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'ScholarlyArticle',
+      name: 'Cognitive Horizon',
+      author: PERSON_REF,
+      url: `${BASE_URL}/research/cognitive`,
+      publisher: 'Professor Bone Lab',
+    },
+  },
+
+  'research/epistemic': {
+    title: 'Epistemic Governance: Deep Research — Professor Bone Lab · JHU',
+    description:
+      'How epistemic governance principles embed into multi-agent AI architectures: maintaining accurate, bounded, and auditable belief states under uncertainty.',
+    canonical: '/research/epistemic',
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'ScholarlyArticle',
+      name: 'Epistemic Governance: Deep Research',
+      author: PERSON_REF,
+      url: `${BASE_URL}/research/epistemic`,
+      publisher: 'Professor Bone Lab',
+    },
+  },
+
+  'research/ggib-1': {
+    title: 'GGIB-M Part 1: Metacognition Evaluation Design Space — Professor Bone Lab',
+    description:
+      'Critical analysis of the metacognition evaluation design space for AI systems. Part 1 of the six-part Governed General Intelligence Benchmark specification.',
+    canonical: '/research/ggib-1',
+  },
+
+  'research/ggib-2': {
+    title: 'GGIB-M Part 2: Metacognition Task Family Design — Professor Bone Lab',
+    description:
+      'Task family design for the Governed General Intelligence Benchmark metacognition track. Part 2 of the GGIB-M specification.',
+    canonical: '/research/ggib-2',
+  },
+
+  'research/ggib-3': {
+    title: 'GGIB-M Part 3: Formal Scoring Framework — Professor Bone Lab',
+    description:
+      'Formal scoring methodology for the Governed General Intelligence Benchmark. Part 3 of the six-part GGIB-M specification.',
+    canonical: '/research/ggib-3',
+  },
+
+  'research/ggib-4': {
+    title: 'GGIB-M Part 4: Human Baseline Design — Professor Bone Lab',
+    description:
+      'Human baseline design and calibration for the GGIB-M benchmark. Part 4 of the six-part Governed General Intelligence Benchmark specification.',
+    canonical: '/research/ggib-4',
+  },
+
+  'research/ggib-5': {
+    title: 'GGIB-M Part 5: Contamination Resistance and Gaming Defenses — Professor Bone Lab',
+    description:
+      'Contamination resistance strategies and gaming defense mechanisms for the GGIB-M benchmark. Part 5 of the six-part specification.',
+    canonical: '/research/ggib-5',
+  },
+
+  'research/ggib-6': {
+    title: 'GGIB-M Part 6: Kaggle-Ready Deliverables — Professor Bone Lab',
+    description:
+      'Kaggle submission deliverables and packaging specification for the GGIB-M benchmark. Part 6 of the six-part Governed General Intelligence Benchmark.',
+    canonical: '/research/ggib-6',
+  },
 }

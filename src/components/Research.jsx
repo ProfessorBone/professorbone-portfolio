@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Seo from "./Seo";
 import { SEO_ROUTES } from "../seoData";
 import AgentStateFramework from "./papers/AgentStateFramework";
@@ -14,22 +14,51 @@ import GGIBPart6 from "./papers/GGIBPart6";
 import "../paper.css";
 import "../paper-ggib.css";
 
-export default function Research() {
+const PAPER_COMPONENTS = {
+  "agent-state":  AgentStateFramework,
+  "orchestrator": OrchestratorEpistemicCapture,
+  "cognitive":    CognitiveHorizon,
+  "epistemic":    EpistemicGovernance,
+  "ggib-1":       GGIBPart1,
+  "ggib-2":       GGIBPart2,
+  "ggib-3":       GGIBPart3,
+  "ggib-4":       GGIBPart4,
+  "ggib-5":       GGIBPart5,
+  "ggib-6":       GGIBPart6,
+};
+
+export default function Research({ initialPaper = null, setPage }) {
   const [ggibOpen, setGgibOpen] = useState(false);
-  const [activePaper, setActivePaper] = useState(null);
+  const [activePaper, setActivePaper] = useState(initialPaper);
 
-  // ── Inline paper routing ──
-  if (activePaper === "agent-state")    return <AgentStateFramework onBack={() => setActivePaper(null)} />;
-  if (activePaper === "orchestrator")   return <OrchestratorEpistemicCapture onBack={() => setActivePaper(null)} />;
-  if (activePaper === "cognitive")      return <CognitiveHorizon onBack={() => setActivePaper(null)} />;
-  if (activePaper === "epistemic")      return <EpistemicGovernance onBack={() => setActivePaper(null)} />;
-  if (activePaper === "ggib-1")         return <GGIBPart1 onBack={() => setActivePaper(null)} />;
-  if (activePaper === "ggib-2")         return <GGIBPart2 onBack={() => setActivePaper(null)} />;
-  if (activePaper === "ggib-3")         return <GGIBPart3 onBack={() => setActivePaper(null)} />;
-  if (activePaper === "ggib-4")         return <GGIBPart4 onBack={() => setActivePaper(null)} />;
-  if (activePaper === "ggib-5")         return <GGIBPart5 onBack={() => setActivePaper(null)} />;
-  if (activePaper === "ggib-6")         return <GGIBPart6 onBack={() => setActivePaper(null)} />;
+  // Sync active paper when navigating via browser back/forward
+  useEffect(() => {
+    setActivePaper(initialPaper);
+  }, [initialPaper]);
 
+  function openPaper(id) {
+    setActivePaper(id);
+    if (setPage) setPage(`research/${id}`);
+  }
+
+  function closePaper() {
+    setActivePaper(null);
+    if (setPage) setPage("research");
+  }
+
+  // ── Individual paper view ──
+  if (activePaper && PAPER_COMPONENTS[activePaper]) {
+    const PaperComponent = PAPER_COMPONENTS[activePaper];
+    const paperSeo = SEO_ROUTES[`research/${activePaper}`];
+    return (
+      <>
+        {paperSeo && <Seo {...paperSeo} />}
+        <PaperComponent onBack={closePaper} />
+      </>
+    );
+  }
+
+  // ── Research listing ──
   return (
     <div className="inner-section">
       <Seo {...SEO_ROUTES.research} />
@@ -71,82 +100,34 @@ export default function Research() {
             <div className="ggib-parts" onClick={(e) => e.stopPropagation()}>
               <div className="ggib-divider" />
 
-              {/* Part 1 — inline reader */}
-              <div
-                className="ggib-part"
-                style={{ cursor: "pointer" }}
-                onClick={() => setActivePaper("ggib-1")}
-              >
-                <span className="ggib-part-num">Part 1</span>
-                <span className="ggib-part-title">Critical Analysis of the Metacognition Evaluation Design Space</span>
-                <span className="ggib-dl" style={{ color: "var(--cyan)" }}>Read →</span>
-              </div>
-
-              {/* Parts 2–6 — PDF until inline readers are built */}
-              {/* Part 2 — inline reader */}
-              <div
-                className="ggib-part"
-                style={{ cursor: "pointer" }}
-                onClick={() => setActivePaper("ggib-2")}
-              >
-                <span className="ggib-part-num">Part 2</span>
-                <span className="ggib-part-title">Metacognition Task Family Design</span>
-                <span className="ggib-dl" style={{ color: "var(--cyan)" }}>Read →</span>
-              </div>
-
-              {/* Part 3 — inline reader */}
-              <div
-                className="ggib-part"
-                style={{ cursor: "pointer" }}
-                onClick={() => setActivePaper("ggib-3")}
-              >
-                <span className="ggib-part-num">Part 3</span>
-                <span className="ggib-part-title">Formal Scoring Framework</span>
-                <span className="ggib-dl" style={{ color: "var(--cyan)" }}>Read →</span>
-              </div>
-
-              {/* Part 4 — inline reader */}
-              <div
-                className="ggib-part"
-                style={{ cursor: "pointer" }}
-                onClick={() => setActivePaper("ggib-4")}
-              >
-                <span className="ggib-part-num">Part 4</span>
-                <span className="ggib-part-title">Human Baseline Design</span>
-                <span className="ggib-dl" style={{ color: "var(--cyan)" }}>Read →</span>
-              </div>
-
-              {/* Part 5 — inline reader */}
-              <div
-                className="ggib-part"
-                style={{ cursor: "pointer" }}
-                onClick={() => setActivePaper("ggib-5")}
-              >
-                <span className="ggib-part-num">Part 5</span>
-                <span className="ggib-part-title">Contamination Resistance and Gaming Defenses</span>
-                <span className="ggib-dl" style={{ color: "var(--cyan)" }}>Read →</span>
-              </div>
-
-              {/* Part 6 — inline reader */}
-              <div
-                className="ggib-part"
-                style={{ cursor: "pointer" }}
-                onClick={() => setActivePaper("ggib-6")}
-              >
-                <span className="ggib-part-num">Part 6</span>
-                <span className="ggib-part-title">Kaggle-Ready Deliverables</span>
-                <span className="ggib-dl" style={{ color: "var(--cyan)" }}>Read →</span>
-              </div>
-
+              {[
+                { id: "ggib-1", label: "Part 1", title: "Critical Analysis of the Metacognition Evaluation Design Space" },
+                { id: "ggib-2", label: "Part 2", title: "Metacognition Task Family Design" },
+                { id: "ggib-3", label: "Part 3", title: "Formal Scoring Framework" },
+                { id: "ggib-4", label: "Part 4", title: "Human Baseline Design" },
+                { id: "ggib-5", label: "Part 5", title: "Contamination Resistance and Gaming Defenses" },
+                { id: "ggib-6", label: "Part 6", title: "Kaggle-Ready Deliverables" },
+              ].map(({ id, label, title }) => (
+                <a
+                  key={id}
+                  className="ggib-part"
+                  href={`/research/${id}`}
+                  onClick={(e) => { e.preventDefault(); openPaper(id); }}
+                >
+                  <span className="ggib-part-num">{label}</span>
+                  <span className="ggib-part-title">{title}</span>
+                  <span className="ggib-dl" style={{ color: "var(--cyan)" }}>Read →</span>
+                </a>
+              ))}
             </div>
           )}
         </div>
 
         {/* ── CARD 02: Orchestrator Epistemic Capture ── */}
-        <div
+        <a
           className="research-card"
-          style={{ cursor: "pointer" }}
-          onClick={() => setActivePaper("orchestrator")}
+          href="/research/orchestrator"
+          onClick={(e) => { e.preventDefault(); openPaper("orchestrator"); }}
         >
           <div className="research-num">02</div>
           <div className="research-content">
@@ -161,13 +142,13 @@ export default function Research() {
           <div className="research-arrow" style={{ color: "var(--cyan)", fontSize: "0.75rem", letterSpacing: "0.06em" }}>
             Read →
           </div>
-        </div>
+        </a>
 
         {/* ── CARD 03: Cognitive Horizon ── */}
-        <div
+        <a
           className="research-card"
-          style={{ cursor: "pointer" }}
-          onClick={() => setActivePaper("cognitive")}
+          href="/research/cognitive"
+          onClick={(e) => { e.preventDefault(); openPaper("cognitive"); }}
         >
           <div className="research-num">03</div>
           <div className="research-content">
@@ -182,13 +163,13 @@ export default function Research() {
           <div className="research-arrow" style={{ color: "var(--cyan)", fontSize: "0.75rem", letterSpacing: "0.06em" }}>
             Read →
           </div>
-        </div>
+        </a>
 
         {/* ── CARD 04: Agent State Framework ── */}
-        <div
+        <a
           className="research-card"
-          style={{ cursor: "pointer" }}
-          onClick={() => setActivePaper("agent-state")}
+          href="/research/agent-state"
+          onClick={(e) => { e.preventDefault(); openPaper("agent-state"); }}
         >
           <div className="research-num">04</div>
           <div className="research-content">
@@ -203,13 +184,13 @@ export default function Research() {
           <div className="research-arrow" style={{ color: "var(--cyan)", fontSize: "0.75rem", letterSpacing: "0.06em" }}>
             Read →
           </div>
-        </div>
+        </a>
 
         {/* ── CARD 05: Epistemic Governance Deep Research ── */}
-        <div
+        <a
           className="research-card"
-          style={{ cursor: "pointer" }}
-          onClick={() => setActivePaper("epistemic")}
+          href="/research/epistemic"
+          onClick={(e) => { e.preventDefault(); openPaper("epistemic"); }}
         >
           <div className="research-num">05</div>
           <div className="research-content">
@@ -224,7 +205,7 @@ export default function Research() {
           <div className="research-arrow" style={{ color: "var(--cyan)", fontSize: "0.75rem", letterSpacing: "0.06em" }}>
             Read →
           </div>
-        </div>
+        </a>
 
       </div>
     </div>
