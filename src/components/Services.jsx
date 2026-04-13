@@ -18,9 +18,6 @@ export default function Services({ setPage }) {
       <p className="services-bridge">
         This work is delivered through governed architectures, agentic applications, and multi-agent systems designed for real operational environments.
       </p>
-      <p className="services-bridge">
-        These systems are used to guide users, automate workflows, and support decision-making in real operational environments.
-      </p>
 
       {/* ── Primary Service ── */}
       <div className="svc-tier-label">Primary Service</div>
@@ -92,9 +89,6 @@ export default function Services({ setPage }) {
           </p>
           <p className="svc-body">
             I build domain-bounded agentic applications designed to solve specific operational problems. These are not generic chat interfaces. They are software systems with embedded AI agents that guide workflows, support decisions, and move users to the correct next step.
-          </p>
-          <p className="svc-body">
-            AEGIS is an example of this approach: a governed, domain-bounded system designed to guide users through structured workflows.
           </p>
           <div className="svc-list-label">What this includes</div>
           <ul className="svc-list">
