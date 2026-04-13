@@ -1,5 +1,7 @@
 import "../buildguide.css";
 import { useState, useRef } from "react";
+import Seo from "./Seo";
+import { SEO_ROUTES } from "../seoData";
 
 const pages = [
   {
@@ -152,6 +154,7 @@ export default function BuildGuide({ setPage }) {
 
   return (
     <div className="bg-page">
+      <Seo {...SEO_ROUTES.buildguide} />
       <button className="ct-back" onClick={() => setPage && setPage("home")}>
         ← Home
       </button>

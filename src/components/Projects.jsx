@@ -1,10 +1,17 @@
-import { projects } from "../data/projects";
+import Seo from "./Seo";
+import { SEO_ROUTES } from "../seoData";
 
 export default function Projects({ setPage }) {
+  function go(p, e) {
+    e.preventDefault();
+    setPage && setPage(p);
+  }
+
   return (
     <div className="inner-section">
+      <Seo {...SEO_ROUTES.projects} />
       <div className="section-tag">02 — Projects</div>
-      <h2 className="section-heading">Intelligent<br />Systems Built</h2>
+      <h1 className="section-heading">Intelligent<br />Systems Built</h1>
       <p className="section-sub">
         Production-grade AI infrastructure built on real logistics context.
         Every project solves a problem I've lived — from the cab to the command line.
@@ -13,12 +20,10 @@ export default function Projects({ setPage }) {
       <div className="projects-grid">
 
         {/* ── CONTINUUM FEATURED CARD ── */}
-        <div
+        <a
           className="continuum-card"
-          onClick={() => setPage && setPage("continuum")}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => e.key === "Enter" && setPage && setPage("continuum")}
+          href="/continuum"
+          onClick={(e) => go("continuum", e)}
         >
           <div className="continuum-card-media">
             <video className="continuum-card-video" autoPlay muted loop playsInline>
@@ -29,7 +34,7 @@ export default function Projects({ setPage }) {
           <div className="continuum-card-body">
             <div className="continuum-card-left">
               <div className="continuum-card-id">PACS-ARCH-001 &nbsp;/&nbsp; 2026</div>
-              <h3 className="continuum-card-title">CONTINUUM</h3>
+              <h2 className="continuum-card-title">CONTINUUM</h2>
               <p className="continuum-card-sub">A Governed Multi-Agent AI Control System</p>
               <p className="continuum-card-desc">
                 Eight specialized agents. 46 architectural decision records.
@@ -48,18 +53,16 @@ export default function Projects({ setPage }) {
               <div className="continuum-stat-box"><div className="continuum-stat-num">46</div><div className="continuum-stat-label">ADRs</div></div>
               <div className="continuum-stat-box"><div className="continuum-stat-num">100</div><div className="continuum-stat-label">Graph Entries</div></div>
               <div className="continuum-stat-box"><div className="continuum-stat-num">0</div><div className="continuum-stat-label">Cloud Deps</div></div>
-              <button className="continuum-cta"><span>Explore Project →</span></button>
+              <span className="continuum-cta"><span>Explore Project →</span></span>
             </div>
           </div>
-        </div>
+        </a>
 
         {/* ── FREIGHTMIND CARD ── */}
-        <div
+        <a
           className="project-card fm-card"
-          onClick={() => setPage && setPage("freightmind")}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => e.key === "Enter" && setPage && setPage("freightmind")}
+          href="/freightmind"
+          onClick={(e) => go("freightmind", e)}
         >
           <div className="fm-card-media">
             <video className="fm-card-video" autoPlay muted loop playsInline>
@@ -81,7 +84,7 @@ export default function Projects({ setPage }) {
               <span className="fm-card-arrow">→</span>
             </div>
           </div>
-        </div>
+        </a>
 
         {/* ── FINANCIAL INTELLIGENCE RAG — COMING SOON ── */}
         <div className="project-card coming-soon-card">

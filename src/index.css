@@ -82,19 +82,20 @@ nav {
 .nav-logo .b { color: var(--cyan); }
 
 .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
-.nav-links button {
+.nav-links :is(button, a) {
   font-size: 0.82rem; color: var(--text-secondary); font-family: var(--font-body);
   background: none; border: none; cursor: pointer; letter-spacing: 0.06em;
   position: relative; transition: color 0.25s; padding: 0;
+  text-decoration: none;
 }
-.nav-links button::after {
+.nav-links :is(button, a)::after {
   content: ''; position: absolute; bottom: -3px; left: 0;
   width: 0; height: 1px; background: var(--cyan); transition: width 0.3s;
 }
-.nav-links button:hover { color: var(--text-primary); }
-.nav-links button:hover::after { width: 100%; }
-.nav-links button.active { color: var(--text-primary); }
-.nav-links button.active::after { width: 100%; }
+.nav-links :is(button, a):hover { color: var(--text-primary); }
+.nav-links :is(button, a):hover::after { width: 100%; }
+.nav-links :is(button, a).active { color: var(--text-primary); }
+.nav-links :is(button, a).active::after { width: 100%; }
 
 .nav-cta {
   padding: 7px 18px !important;

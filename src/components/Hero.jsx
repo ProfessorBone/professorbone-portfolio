@@ -1,6 +1,15 @@
+import Seo from "./Seo";
+import { SEO_ROUTES } from "../seoData";
+
 export default function Hero({ setPage }) {
+  function go(p, e) {
+    e.preventDefault();
+    setPage(p);
+  }
+
   return (
     <div className="hero-wrap">
+      <Seo {...SEO_ROUTES.home} />
 
       {/* ── LEFT: Text content ── */}
       <div className="hero-left">
@@ -25,8 +34,8 @@ export default function Hero({ setPage }) {
         </p>
 
         <div className="hero-actions" style={{animation:"slideUp 0.8s ease 0.65s both"}}>
-          <button className="btn-primary" onClick={() => setPage("projects")}>View My Work</button>
-          <button className="btn-glass"   onClick={() => setPage("research")}>Read My Papers</button>
+          <a className="btn-primary" href="/projects" onClick={(e) => go("projects", e)}>View My Work</a>
+          <a className="btn-glass"   href="/research" onClick={(e) => go("research", e)}>Read My Papers</a>
         </div>
 
         <div className="hero-divider" style={{animation:"slideUp 0.8s ease 0.85s both"}} />
@@ -56,7 +65,7 @@ export default function Hero({ setPage }) {
         <div className="hero-avatar-glow" />
         <img
           src="/professor-bone-avatar.png"
-          alt="Professor Bone"
+          alt="Professor Bone — Clarence Downs, AI Systems Architect"
           className="hero-avatar-img"
         />
       </div>

@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import Seo from "./Seo";
+import { SEO_ROUTES } from "../seoData";
 
 export default function Continuum({ setPage }) {
   const videoRef = useRef(null);
@@ -77,6 +79,7 @@ export default function Continuum({ setPage }) {
 
   return (
     <div className="ct-page">
+      <Seo {...SEO_ROUTES.continuum} />
 
       {/* ── BACK NAV ── */}
       <button className="ct-back" onClick={() => setPage && setPage("projects")}>

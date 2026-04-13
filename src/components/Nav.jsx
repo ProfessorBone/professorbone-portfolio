@@ -4,7 +4,8 @@ export default function Nav({ page, setPage }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const links = ["about", "projects", "research", "education", "academy"];
 
-  function go(p) {
+  function go(p, e) {
+    e.preventDefault();
     setPage(p);
     setMenuOpen(false);
   }
@@ -12,31 +13,36 @@ export default function Nav({ page, setPage }) {
   return (
     <>
       <nav>
-        <button className="nav-logo" onClick={() => go("home")}>
+        <a className="nav-logo" href="/" onClick={(e) => go("home", e)}>
           <span className="p">P</span><span className="b">B</span> Home
-        </button>
+        </a>
 
         {/* ── Desktop links ── */}
         <ul className="nav-links nav-desktop">
           {links.map((l) => (
             <li key={l}>
-              <button className={page === l ? "active" : ""} onClick={() => go(l)}>
+              <a
+                className={page === l ? "active" : ""}
+                href={`/${l}`}
+                onClick={(e) => go(l, e)}
+              >
                 {l.charAt(0).toUpperCase() + l.slice(1)}
-              </button>
+              </a>
             </li>
           ))}
           <li>
-            <button
+            <a
               className={`nav-build-guide ${page === "buildguide" ? "active" : ""}`}
-              onClick={() => go("buildguide")}
+              href="/buildguide"
+              onClick={(e) => go("buildguide", e)}
             >
               Build Guide
-            </button>
+            </a>
           </li>
           <li>
-            <button className="nav-cta" onClick={() => go("contact")}>
+            <a className="nav-cta" href="/contact" onClick={(e) => go("contact", e)}>
               Let's Talk
-            </button>
+            </a>
           </li>
         </ul>
 
@@ -57,23 +63,32 @@ export default function Nav({ page, setPage }) {
         <ul className="nav-mobile-links">
           {links.map((l) => (
             <li key={l}>
-              <button className={page === l ? "active" : ""} onClick={() => go(l)}>
+              <a
+                className={page === l ? "active" : ""}
+                href={`/${l}`}
+                onClick={(e) => go(l, e)}
+              >
                 {l.charAt(0).toUpperCase() + l.slice(1)}
-              </button>
+              </a>
             </li>
           ))}
           <li>
-            <button
+            <a
               className={`nav-mobile-buildguide ${page === "buildguide" ? "active" : ""}`}
-              onClick={() => go("buildguide")}
+              href="/buildguide"
+              onClick={(e) => go("buildguide", e)}
             >
               Build Guide
-            </button>
+            </a>
           </li>
           <li>
-            <button className="nav-mobile-cta" onClick={() => go("contact")}>
+            <a
+              className="nav-mobile-cta"
+              href="/contact"
+              onClick={(e) => go("contact", e)}
+            >
               Let's Talk
-            </button>
+            </a>
           </li>
         </ul>
       </div>

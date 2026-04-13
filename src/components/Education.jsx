@@ -1,8 +1,12 @@
+import Seo from "./Seo";
+import { SEO_ROUTES } from "../seoData";
+
 export default function Education() {
   return (
     <div className="inner-section">
+      <Seo {...SEO_ROUTES.education} />
       <div className="section-tag">04 — Education</div>
-      <h2 className="section-heading">Credentials &<br />Certifications</h2>
+      <h1 className="section-heading">Credentials &amp;<br />Certifications</h1>
       <p className="section-sub">
         A non-traditional path built on real systems and serious study.
         Every credential earned while logging miles across the Northeast.

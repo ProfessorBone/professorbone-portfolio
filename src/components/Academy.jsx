@@ -5,11 +5,15 @@ const tiers = [
   { num: "TIER 04", name: "Architect",    desc: "Governance frameworks, edge nodes, spec-embedded evaluation. For serious builders only." },
 ];
 
+import Seo from "./Seo";
+import { SEO_ROUTES } from "../seoData";
+
 export default function Academy() {
   return (
     <div className="inner-section">
+      <Seo {...SEO_ROUTES.academy} />
       <div className="section-tag">05 — Academy</div>
-      <h2 className="section-heading">Unc's AI<br />Academy</h2>
+      <h1 className="section-heading">Unc's AI<br />Academy</h1>
 
       <div className="academy-hero">
         <div>

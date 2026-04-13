@@ -59,7 +59,7 @@
 .coming-soon-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--purple); animation: blink 2.5s ease-in-out infinite; }
 
 /* ── CONTINUUM FEATURED CARD ── */
-.continuum-card { grid-column: 1 / -1; position: relative; border-radius: 20px; overflow: hidden; border: 1px solid rgba(0,212,255,0.2); cursor: pointer; transition: border-color 0.4s, box-shadow 0.4s; background: #050A14; display: flex; flex-direction: column; justify-content: flex-end; min-height: 420px; }
+.continuum-card { grid-column: 1 / -1; position: relative; border-radius: 20px; overflow: hidden; border: 1px solid rgba(0,212,255,0.2); cursor: pointer; transition: border-color 0.4s, box-shadow 0.4s; background: #050A14; display: flex; flex-direction: column; justify-content: flex-end; min-height: 420px; text-decoration: none; color: inherit; }
 .continuum-card:hover { border-color: rgba(0,212,255,0.5); box-shadow: 0 0 60px rgba(0,212,255,0.12), 0 24px 60px rgba(0,0,0,0.6); }
 .continuum-card-media { position: absolute; inset: 0; }
 .continuum-card-video { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; display: block; }
@@ -83,7 +83,7 @@
 .continuum-card-media::after { content: 'FEATURED'; position: absolute; top: 20px; right: 20px; font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.2em; color: var(--cyan); border: 1px solid rgba(0,212,255,0.35); padding: 4px 12px; border-radius: 100px; background: rgba(5,10,20,0.6); backdrop-filter: blur(8px); }
 
 /* ── FREIGHTMIND PROJECT CARD ── */
-.fm-card { padding: 0 !important; overflow: hidden; border: 1px solid rgba(255,140,0,0.2) !important; cursor: pointer; background: #050A14 !important; position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 320px; }
+.fm-card { padding: 0 !important; overflow: hidden; border: 1px solid rgba(255,140,0,0.2) !important; cursor: pointer; background: #050A14 !important; position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 320px; text-decoration: none; color: inherit; }
 .fm-card::before { background: linear-gradient(90deg, #FF8C00, #FF4500) !important; }
 .fm-card:hover { border-color: rgba(255,140,0,0.5) !important; box-shadow: 0 0 40px rgba(255,140,0,0.1), 0 16px 48px rgba(0,0,0,0.5) !important; }
 .fm-card-media { position: absolute; inset: 0; }

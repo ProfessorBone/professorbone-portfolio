@@ -37,10 +37,12 @@ Components import from these files and render via `.map()`. There is no backend 
 
 ### CSS Architecture
 
-Three CSS files, each with a distinct scope:
+Five CSS files, each with a distinct scope:
 - `src/index.css` — design system tokens, global resets, Nav, footer, shared utility classes (`.glass-card`, `.chip`, `.btn-primary`, `.btn-glass`, `.section-tag`, `.section-heading`)
 - `src/App.css` — page-level styles (Hero, About, Projects, Research, Education, Academy, Contact) and responsive breakpoints
 - `src/buildguide.css` — BuildGuide-specific styles including the 3D flipbook animation
+- `src/paper.css` — paper reader layout (`.paper-wrap`, sections, headers, keyword chips, references)
+- `src/paper-ggib.css` — GGIB benchmark-specific paper styles
 
 ### Design System
 

@@ -44,7 +44,7 @@ export default function App() {
   if (page === "continuum") {
     return (
       <>
-        <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /></div>
+        <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /><div className="orb orb-3" /></div>
         <Continuum setPage={navigate} />
       </>
     );
@@ -53,7 +53,7 @@ export default function App() {
   if (page === "freightmind") {
     return (
       <>
-        <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /></div>
+        <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /><div className="orb orb-3" /></div>
         <FreightMind setPage={navigate} />
       </>
     );
@@ -62,7 +62,7 @@ export default function App() {
   if (page === "buildguide") {
     return (
       <>
-        <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /></div>
+        <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /><div className="orb orb-3" /></div>
         <BuildGuide setPage={navigate} />
       </>
     );

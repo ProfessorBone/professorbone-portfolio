@@ -4,11 +4,15 @@ const contacts = [
   { label: "GitHub",   title: "github.com/ProfessorBone",          desc: "Source code, project repositories, and open research artifacts.",           href: "https://github.com/ProfessorBone" },
 ];
 
+import Seo from "./Seo";
+import { SEO_ROUTES } from "../seoData";
+
 export default function Contact() {
   return (
     <div className="inner-section" style={{maxWidth:"640px"}}>
+      <Seo {...SEO_ROUTES.contact} />
       <div className="section-tag">06 — Contact</div>
-      <h2 className="section-heading">Let's<br />Connect</h2>
+      <h1 className="section-heading">Let's<br />Connect</h1>
       <p className="section-sub">
         Hiring for AI engineering roles, research collaboration, or interested in Unc's AI Academy?
         Reach out — I read everything.

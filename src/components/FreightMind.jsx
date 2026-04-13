@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import Seo from "./Seo";
+import { SEO_ROUTES } from "../seoData";
 
 export default function FreightMind({ setPage }) {
   const videoRef = useRef(null);
@@ -11,6 +13,7 @@ export default function FreightMind({ setPage }) {
 
   return (
     <div className="fm-page">
+      <Seo {...SEO_ROUTES.freightmind} />
 
       {/* ── BACK NAV ── */}
       <button className="ct-back" onClick={() => setPage && setPage("projects")}>

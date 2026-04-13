@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Seo from "./Seo";
+import { SEO_ROUTES } from "../seoData";
 import AgentStateFramework from "./papers/AgentStateFramework";
 import OrchestratorEpistemicCapture from "./papers/OrchestratorEpistemicCapture";
 import CognitiveHorizon from "./papers/CognitiveHorizon";
@@ -30,8 +32,9 @@ export default function Research() {
 
   return (
     <div className="inner-section">
+      <Seo {...SEO_ROUTES.research} />
       <div className="section-tag">03 — Research</div>
-      <h2 className="section-heading">Papers &amp;<br />Frameworks</h2>
+      <h1 className="section-heading">Papers &amp;<br />Frameworks</h1>
       <p className="section-sub">
         Original research produced under the <strong>Professor Bone Lab</strong> identity at JHU.
         Writing voice: problem-statement-first, direct declarative, no hedging.

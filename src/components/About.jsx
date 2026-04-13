@@ -1,8 +1,12 @@
+import Seo from "./Seo";
+import { SEO_ROUTES } from "../seoData";
+
 export default function About() {
   return (
     <div className="inner-section">
+      <Seo {...SEO_ROUTES.about} />
       <div className="section-tag">01 — About</div>
-      <h2 className="section-heading">The Road That<br />Built the Engineer</h2>
+      <h1 className="section-heading">The Road That<br />Built the Engineer</h1>
 
       <div className="about-grid">
         <div className="about-bio">
@@ -20,7 +24,7 @@ export default function About() {
         </div>
 
         <div className="identity-card">
-          <h3>Clarence Downs</h3>
+          <h2>Clarence Downs</h2>
           <div className="title-row">A.K.A. PROFESSOR BONE</div>
           <div className="identity-divider" />
           {[
