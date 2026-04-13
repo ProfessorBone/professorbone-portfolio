@@ -62,7 +62,7 @@ export default function Research({ initialPaper = null, setPage }) {
   return (
     <div className="inner-section">
       <Seo {...SEO_ROUTES.research} />
-      <div className="section-tag">03 — Research</div>
+      <div className="section-tag">04 — Research</div>
       <h1 className="section-heading">Papers &amp;<br />Frameworks</h1>
       <p className="section-sub">
         Original research produced under the <strong>Professor Bone Lab</strong> identity at JHU.

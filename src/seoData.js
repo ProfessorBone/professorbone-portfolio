@@ -89,18 +89,18 @@ export const SEO_ROUTES = {
   },
 
   services: {
-    title: 'Services — Governance-First AI Architecture | Professor Bone',
+    title: 'Services — Governance-First AI Systems | Professor Bone',
     description:
-      'Governed AI architecture, multi-agent systems design, and agentic web apps. BCWA, Value Resolution Stack, RAG pipelines, and full-stack AI integration by Clarence Downs.',
+      'Governed AI architecture, multi-agent systems design, and agentic web applications. Clarence Downs builds constraint-governed, production-grade AI systems for organizations that need reliability, compliance, and operational clarity.',
     canonical: '/services',
     structuredData: {
       '@context': 'https://schema.org',
-      '@type': 'Service',
-      name: 'Governance-First AI Systems',
-      description:
-        'AI systems where governance is structural: Behavioral Constraint Weighting Architecture, multi-agent coordination, and domain-bounded agentic applications.',
-      provider: PERSON_REF,
+      '@type': 'WebPage',
+      name: 'Services — Governance-First AI Systems',
       url: `${BASE_URL}/services`,
+      author: PERSON_REF,
+      description:
+        'Governed AI architecture, multi-agent systems design, and agentic web applications built by Clarence Downs.',
     },
   },
 

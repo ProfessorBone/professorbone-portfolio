@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <div className="inner-section" style={{maxWidth:"640px"}}>
       <Seo {...SEO_ROUTES.contact} />
-      <div className="section-tag">06 — Contact</div>
+      <div className="section-tag">07 — Contact</div>
       <h1 className="section-heading">Let's<br />Connect</h1>
       <p className="section-sub">
         Hiring for AI engineering roles, research collaboration, or interested in Unc's AI Academy?

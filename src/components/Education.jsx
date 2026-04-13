@@ -5,7 +5,7 @@ export default function Education() {
   return (
     <div className="inner-section">
       <Seo {...SEO_ROUTES.education} />
-      <div className="section-tag">04 — Education</div>
+      <div className="section-tag">05 — Education</div>
       <h1 className="section-heading">Credentials &amp;<br />Certifications</h1>
       <p className="section-sub">
         A non-traditional path built on real systems and serious study.

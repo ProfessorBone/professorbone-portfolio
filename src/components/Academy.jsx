@@ -12,7 +12,7 @@ export default function Academy() {
   return (
     <div className="inner-section">
       <Seo {...SEO_ROUTES.academy} />
-      <div className="section-tag">05 — Academy</div>
+      <div className="section-tag">06 — Academy</div>
       <h1 className="section-heading">Unc's AI<br />Academy</h1>
 
       <div className="academy-hero">

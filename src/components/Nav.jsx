@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Nav({ page, setPage }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const links = ["about", "projects", "research", "education", "academy", "services"];
+  const links = ["about", "projects", "services", "research", "education", "academy"];
 
   function go(p, e) {
     e.preventDefault();

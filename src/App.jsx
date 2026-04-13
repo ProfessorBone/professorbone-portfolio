@@ -12,9 +12,10 @@ import Contact    from "./components/Contact";
 import Continuum  from "./components/Continuum";
 import FreightMind from "./components/FreightMind";
 import BuildGuide from "./components/BuildGuide";
-import Services  from "./components/Services";
+import Services   from "./components/Services";
+import Footer     from "./components/Footer";
 
-const VALID_PAGES = ["home","about","projects","research","education","academy","contact","continuum","freightmind","buildguide","services"];
+const VALID_PAGES = ["home","about","projects","services","research","education","academy","contact","continuum","freightmind","buildguide"];
 const VALID_PAPERS = ["agent-state","orchestrator","cognitive","epistemic","ggib-1","ggib-2","ggib-3","ggib-4","ggib-5","ggib-6"];
 
 function pageFromPath() {
@@ -49,12 +50,13 @@ export default function App() {
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
-  // Full-screen immersive pages — no nav/footer
+  // Full-screen immersive pages — footer included, no nav
   if (page === "continuum") {
     return (
       <>
         <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /><div className="orb orb-3" /></div>
         <Continuum setPage={navigate} />
+        <Footer setPage={navigate} />
       </>
     );
   }
@@ -64,6 +66,7 @@ export default function App() {
       <>
         <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /><div className="orb orb-3" /></div>
         <FreightMind setPage={navigate} />
+        <Footer setPage={navigate} />
       </>
     );
   }
@@ -73,6 +76,7 @@ export default function App() {
       <>
         <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /><div className="orb orb-3" /></div>
         <BuildGuide setPage={navigate} />
+        <Footer setPage={navigate} />
       </>
     );
   }
@@ -86,10 +90,10 @@ export default function App() {
     home:      <Hero setPage={navigate} />,
     about:     <About />,
     projects:  <Projects setPage={navigate} />,
+    services:  <Services setPage={navigate} />,
     research:  <Research initialPaper={initialPaper} setPage={navigate} />,
     education: <Education />,
     academy:   <Academy />,
-    services:  <Services setPage={navigate} />,
     contact:   <Contact />,
   };
 
@@ -104,14 +108,7 @@ export default function App() {
       <div className="page-content">
         {pages[basePage] || <Hero setPage={navigate} />}
       </div>
-      <footer>
-        <span className="footer-text">© 2025 Clarence Downs · Professor Bone Lab · JHU</span>
-        <div className="footer-links">
-          <a href="https://github.com/ProfessorBone" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/clarencedowns/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="mailto:clarenced2@icloud.com">Email</a>
-        </div>
-      </footer>
+      <Footer setPage={navigate} />
     </>
   );
 }
