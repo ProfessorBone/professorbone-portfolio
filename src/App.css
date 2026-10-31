@@ -410,7 +410,7 @@
 
 /* ── Home hero: floating frosted cards around the background logo ── */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-.hero-wrap { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 28px; padding: clamp(190px, 33vh, 340px) 48px 60px; min-height: 100vh; max-width: 1560px; margin: 0 auto; }
+.hero-wrap { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 28px; padding: calc(68px + min(100vw, 125vh) * 0.56) 48px 60px; min-height: 100vh; max-width: 1560px; margin: 0 auto; }
 .hero-grid { width: 100%; display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; }
 .hero-col { display: flex; flex-direction: column; gap: 18px; }
 .hero-col-left { width: min(400px, 30vw); min-width: 300px; }
@@ -418,9 +418,9 @@
 
 /* One frosted-glass look shared by every floating card */
 .hero-card, .hero-col-right .glass-card {
-  background: rgba(190,210,240,0.14); border: 1px solid rgba(255,255,255,0.28); border-radius: 24px;
-  backdrop-filter: blur(22px) saturate(1.3); -webkit-backdrop-filter: blur(22px) saturate(1.3);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 20px 60px rgba(0,0,0,0.45);
+  background: rgba(14,22,44,0.42); border: 1px solid rgba(255,255,255,0.22); border-radius: 24px;
+  backdrop-filter: blur(30px) brightness(0.5) saturate(1.1); -webkit-backdrop-filter: blur(30px) brightness(0.5) saturate(1.1);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 20px 60px rgba(0,0,0,0.45);
 }
 .hero-card { padding: 28px 30px; }
 .hero-card-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; padding: 18px 22px; opacity: 0; }
