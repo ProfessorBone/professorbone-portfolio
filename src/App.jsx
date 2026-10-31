@@ -99,7 +99,7 @@ export default function App() {
 
   return (
     <>
-      <div className={`pb-logo-bg ${basePage === "home" ? "" : "pb-logo-bg-dim"}`} />
+      <div className={`pb-logo-bg ${basePage === "home" ? "" : "pb-logo-bg-right"}`} />
       <Nav page={basePage} setPage={navigate} />
       <div className="page-content">
         {pages[basePage] || <Hero setPage={navigate} />}
