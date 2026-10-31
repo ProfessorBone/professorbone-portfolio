@@ -30,8 +30,12 @@ body {
 
 /* ── Professor Bone logo: locked full-page background ── */
 .pb-logo-bg {
-  position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  background: #000 url('/professor-bone-logo.jpg') no-repeat center center / cover;
+  position: fixed; inset: 68px 0 0 0; z-index: 0; pointer-events: none;
+  background: #000 url('/professor-bone-logo.jpg') no-repeat center top / min(100vw, 125vh) auto;
+}
+/* Portrait screens: fill the width instead of leaving bars above and below */
+@media (orientation: portrait) {
+  .pb-logo-bg { background-size: cover; }
 }
 /* Darker scrim on content pages so body text stays readable */
 .pb-logo-bg-dim::after {

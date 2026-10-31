@@ -1,6 +1,6 @@
 /* ── Hero ── */
 .hero-wrap { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; padding: 60px 40px 60px; min-height: calc(100vh - 68px); max-width: 1240px; margin: 0 auto; }
-.hero-card { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 48px; padding: 48px 52px; background: rgba(6,10,22,0.55); border: 1px solid rgba(255,255,255,0.16); border-radius: 28px; backdrop-filter: blur(8px) saturate(1.15); -webkit-backdrop-filter: blur(8px) saturate(1.15); box-shadow: 0 24px 80px rgba(0,0,0,0.45); }
+.hero-card { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 48px; padding: 48px 52px; background: rgba(190,210,240,0.14); border: 1px solid rgba(255,255,255,0.28); border-radius: 28px; backdrop-filter: blur(22px) saturate(1.3); -webkit-backdrop-filter: blur(22px) saturate(1.3); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 24px 80px rgba(0,0,0,0.45); box-shadow: 0 24px 80px rgba(0,0,0,0.45); }
 .hero-stack { display: flex; flex-direction: column; align-items: center; }
 .hero-stack .hero-stack-label { color: var(--text-secondary); text-shadow: 0 1px 8px rgba(0,0,0,0.8); }
 .hero-bubbles { justify-content: center; max-width: 900px; gap: 10px; }
