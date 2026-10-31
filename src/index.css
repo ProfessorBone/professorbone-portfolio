@@ -41,7 +41,7 @@ body {
 /* Darker scrim on content pages so body text stays readable */
 .pb-logo-bg-dim::after {
   content: ''; position: absolute; inset: 0;
-  background: rgba(5,10,20,0.72);
+  background: rgba(5,10,20,0.82);
 }
 
 /* ── Background Orbs ── */
