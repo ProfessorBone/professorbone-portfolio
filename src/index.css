@@ -29,13 +29,14 @@ body {
 }
 
 /* ── Professor Bone logo: locked full-page background ── */
+:root { --logo-size: min(100vw, calc(100vh - 68px)); }
 .pb-logo-bg {
   position: fixed; inset: 68px 0 0 0; z-index: 0; pointer-events: none;
-  background: #000 url('/professor-bone-logo.jpg') no-repeat center top / min(100vw, 125vh) auto;
+  background: #000 url('/professor-bone-logo.jpg') no-repeat center top / var(--logo-size) auto;
 }
 /* Portrait screens: fill the width instead of leaving bars above and below */
 @media (orientation: portrait) {
-  .pb-logo-bg { background-size: cover; }
+  .pb-logo-bg { background-size: 100vw auto; }
 }
 /* Darker scrim on content pages so body text stays readable */
 .pb-logo-bg-dim::after {
@@ -190,7 +191,7 @@ nav {
 .cert-status.in-progress { background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.2); color: var(--cyan); }
 
 /* ── Footer ── */
-.pb-footer { position: relative; z-index: 1; background: var(--bg); border-top: 1px solid var(--glass-border); padding: 24px 80px 0; }
+.pb-footer { position: relative; z-index: 1; background: rgba(5,10,20,0.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid var(--glass-border); padding: 24px 80px 0; }
 .pb-footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; padding-bottom: 18px; }
 .pb-footer-brand { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
 .pb-footer-role { font-family: var(--font-mono); font-size: 0.65rem; color: var(--cyan); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
