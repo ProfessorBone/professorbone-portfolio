@@ -43,7 +43,7 @@ export default function Footer({ setPage }) {
         {/* Column 3 — Work */}
         <div className="pb-footer-col">
           <div className="pb-footer-col-label">Work</div>
-          <ul className="pb-footer-nav" style={{ marginBottom: "28px" }}>
+          <ul className="pb-footer-nav" style={{ marginBottom: "12px" }}>
             <li><a href="/continuum" className="pb-footer-link" onClick={(e) => go("continuum", e)}>Continuum</a></li>
             <li><a href="/freightmind" className="pb-footer-link" onClick={(e) => go("freightmind", e)}>FreightMind</a></li>
             <li><a href="/buildguide" className="pb-footer-link" onClick={(e) => go("buildguide", e)}>Build Guide</a></li>
@@ -58,7 +58,7 @@ export default function Footer({ setPage }) {
         {/* Column 4 — Connect */}
         <div className="pb-footer-col">
           <div className="pb-footer-col-label">Connect</div>
-          <ul className="pb-footer-nav" style={{ marginBottom: "28px" }}>
+          <ul className="pb-footer-nav" style={{ marginBottom: "12px" }}>
             <li><a href="/about" className="pb-footer-link" onClick={(e) => go("about", e)}>About</a></li>
             <li><a href="/education" className="pb-footer-link" onClick={(e) => go("education", e)}>Education</a></li>
             <li><a href="/academy" className="pb-footer-link" onClick={(e) => go("academy", e)}>Unc's AI Academy</a></li>
