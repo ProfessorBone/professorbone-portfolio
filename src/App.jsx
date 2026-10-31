@@ -99,11 +99,7 @@ export default function App() {
 
   return (
     <>
-      <div className="bg-layer">
-        <div className="orb orb-1" /><div className="orb orb-2" /><div className="orb orb-3" />
-      </div>
-      <div className="grid-overlay" />
-      <div className="pb-avatar-bg" />
+      <div className={`pb-logo-bg ${basePage === "home" ? "" : "pb-logo-bg-dim"}`} />
       <Nav page={basePage} setPage={navigate} />
       <div className="page-content">
         {pages[basePage] || <Hero setPage={navigate} />}

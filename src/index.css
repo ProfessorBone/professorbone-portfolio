@@ -28,20 +28,15 @@ body {
   min-height: 100vh;
 }
 
-/* ── Professor Bone Avatar Background ── */
-.pb-avatar-bg {
-  position: fixed;
-  top: 40px;
-  left: -20px;
-  width: 420px;
-  height: 420px;
-  background: url('/professor-bone-avatar.png') no-repeat center top;
-  background-size: contain;
-  opacity: 0.18;
-  mix-blend-mode: screen;
-  z-index: 0;
-  pointer-events: none;
-  filter: blur(1px) saturate(1.5);
+/* ── Professor Bone logo: locked full-page background ── */
+.pb-logo-bg {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: #000 url('/professor-bone-logo.jpg') no-repeat center center / cover;
+}
+/* Darker scrim on content pages so body text stays readable */
+.pb-logo-bg-dim::after {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(5,10,20,0.72);
 }
 
 /* ── Background Orbs ── */
@@ -84,7 +79,7 @@ nav {
 .nav-logo .p { color: #fff; }
 .nav-logo .b { color: var(--cyan); }
 
-.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+.nav-links { margin-left: auto; display: flex; gap: 36px; list-style: none; align-items: center; }
 .nav-links :is(button, a) {
   font-size: 0.82rem; color: var(--text-secondary); font-family: var(--font-body);
   background: none; border: none; cursor: pointer; letter-spacing: 0.06em;
@@ -238,3 +233,4 @@ nav {
   .nav-links { gap: 16px; }
   .pb-footer { padding: 40px 20px 0; }
 }
+.nav-hamburger { margin-left: auto; }

@@ -1,6 +1,6 @@
 // Update BASE_URL to match the live domain before deploying.
 export const BASE_URL = 'https://www.professorbone.com'
-export const DEFAULT_OG_IMAGE = `${BASE_URL}/professor-bone-avatar.png`
+export const DEFAULT_OG_IMAGE = `${BASE_URL}/professor-bone-logo.jpg`
 
 const PERSON_REF = { '@id': `${BASE_URL}/#person` }
 
@@ -11,7 +11,7 @@ const PERSON_SCHEMA = {
   alternateName: 'Professor Bone',
   jobTitle: 'AI Systems Architect',
   url: BASE_URL,
-  image: `${BASE_URL}/professor-bone-avatar.png`,
+  image: `${BASE_URL}/professor-bone-logo.jpg`,
   sameAs: [
     'https://github.com/ProfessorBone',
     'https://www.linkedin.com/in/clarencedowns/',

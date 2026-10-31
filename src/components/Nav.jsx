@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Nav({ page, setPage }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const links = ["about", "projects", "services", "research", "education", "academy"];
+  const links = ["home", "about", "projects", "services", "research", "education", "academy"];
 
   function go(p, e) {
     e.preventDefault();
@@ -13,17 +13,13 @@ export default function Nav({ page, setPage }) {
   return (
     <>
       <nav>
-        <a className="nav-logo" href="/" onClick={(e) => go("home", e)}>
-          <span className="p">P</span><span className="b">B</span> Home
-        </a>
-
         {/* ── Desktop links ── */}
         <ul className="nav-links nav-desktop">
           {links.map((l) => (
             <li key={l}>
               <a
                 className={page === l ? "active" : ""}
-                href={`/${l}`}
+                href={l === "home" ? "/" : `/${l}`}
                 onClick={(e) => go(l, e)}
               >
                 {l.charAt(0).toUpperCase() + l.slice(1)}
@@ -65,7 +61,7 @@ export default function Nav({ page, setPage }) {
             <li key={l}>
               <a
                 className={page === l ? "active" : ""}
-                href={`/${l}`}
+                href={l === "home" ? "/" : `/${l}`}
                 onClick={(e) => go(l, e)}
               >
                 {l.charAt(0).toUpperCase() + l.slice(1)}

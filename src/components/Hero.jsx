@@ -11,6 +11,7 @@ export default function Hero({ setPage }) {
     <div className="hero-wrap">
       <Seo {...SEO_ROUTES.home} />
 
+      <div className="hero-card">
       {/* ── LEFT: Text content ── */}
       <div className="hero-left">
         <div className="hero-badge" style={{opacity:1,animation:"slideDown 0.7s ease 0.1s both"}}>
@@ -38,36 +39,6 @@ export default function Hero({ setPage }) {
           <a className="btn-glass"   href="/research" onClick={(e) => go("research", e)}>Read My Papers</a>
         </div>
 
-        <div className="hero-divider" style={{animation:"slideUp 0.8s ease 0.85s both"}} />
-        <div className="hero-stack-label" style={{animation:"slideUp 0.8s ease 0.9s both"}}>Core Stack</div>
-        <div className="hero-chips" style={{animation:"slideUp 0.8s ease 1s both"}}>
-          {[
-            "OpenClaw",
-            "Claude API",
-            "Ollama",
-            "TypeScript",
-            "Python",
-            "MLX",
-            "Multi-Agent Systems",
-            "Telegram API",
-            "React",
-            "GraphHopper",
-            "Tailscale",
-            "Obsidian",
-          ].map(c => (
-            <span key={c} className="chip">{c}</span>
-          ))}
-        </div>
-      </div>
-
-      {/* ── CENTER: Avatar ── */}
-      <div className="hero-avatar-wrap" style={{animation:"fadeIn 1s ease 0.5s both"}}>
-        <div className="hero-avatar-glow" />
-        <img
-          src="/professor-bone-avatar.png"
-          alt="Professor Bone — Clarence Downs, AI Systems Architect"
-          className="hero-avatar-img"
-        />
       </div>
 
       {/* ── RIGHT: Glass cards ── */}
@@ -89,9 +60,19 @@ export default function Hero({ setPage }) {
         </div>
       </div>
 
-      <div className="scroll-hint" style={{animation:"fadeIn 1s ease 1.4s both"}}>
-        <div className="scroll-line" />
-        <span className="scroll-text">EXPLORE THE WORK</span>
+      </div>
+
+      {/* ── Core stack bubbles, below the main card ── */}
+      <div className="hero-stack" style={{animation:"slideUp 0.8s ease 0.9s both"}}>
+        <div className="hero-stack-label">Core Stack</div>
+        <div className="hero-chips hero-bubbles">
+          {[
+            "OpenClaw","Claude API","Ollama","TypeScript","Python","MLX",
+            "Multi-Agent Systems","Telegram API","React","GraphHopper","Tailscale","Obsidian",
+          ].map(c => (
+            <span key={c} className="chip">{c}</span>
+          ))}
+        </div>
       </div>
     </div>
   );

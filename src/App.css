@@ -1,10 +1,15 @@
 /* ── Hero ── */
-.hero-wrap { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 60px; padding: 80px 80px 60px; min-height: 100vh; max-width: 1440px; margin: 0 auto; }
+.hero-wrap { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; padding: 60px 40px 60px; min-height: calc(100vh - 68px); max-width: 1240px; margin: 0 auto; }
+.hero-card { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 48px; padding: 48px 52px; background: rgba(6,10,22,0.55); border: 1px solid rgba(255,255,255,0.16); border-radius: 28px; backdrop-filter: blur(8px) saturate(1.15); -webkit-backdrop-filter: blur(8px) saturate(1.15); box-shadow: 0 24px 80px rgba(0,0,0,0.45); }
+.hero-stack { display: flex; flex-direction: column; align-items: center; }
+.hero-stack .hero-stack-label { color: var(--text-secondary); text-shadow: 0 1px 8px rgba(0,0,0,0.8); }
+.hero-bubbles { justify-content: center; max-width: 900px; gap: 10px; }
+.hero-bubbles .chip { padding: 6px 14px; background: rgba(6,10,22,0.6); border: 1px solid rgba(255,255,255,0.16); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: var(--text-primary); }
 .hero-left { flex: 1; min-width: 0; }
 .hero-badge { display: inline-flex; align-items: center; gap: 9px; padding: 6px 16px; background: rgba(0,212,255,0.07); border: 1px solid rgba(0,212,255,0.2); border-radius: 100px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--cyan); letter-spacing: 0.12em; margin-bottom: 36px; opacity: 0; }
 .pulse-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); animation: blink 2s ease-in-out infinite; }
 @keyframes blink { 0%,100% { opacity:1; box-shadow: 0 0 6px var(--cyan); } 50% { opacity:0.3; box-shadow: none; } }
-.hero-name { font-family: var(--font-display); font-weight: 800; font-size: clamp(3.2rem, 8vw, 8rem); line-height: 0.92; letter-spacing: -0.03em; margin-bottom: 0; opacity: 0; overflow: visible; }
+.hero-name { font-family: var(--font-display); font-weight: 800; font-size: clamp(3rem, 6.5vw, 6rem); line-height: 0.92; letter-spacing: -0.03em; margin-bottom: 0; opacity: 0; overflow: visible; }
 .name-first { display: block; color: var(--text-primary); }
 .name-last { display: block; background: linear-gradient(125deg, var(--cyan) 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .hero-realname { font-family: var(--font-mono); font-size: 0.88rem; color: #fff; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 8px; margin-bottom: 32px; opacity: 0; }
@@ -16,15 +21,8 @@
 .hero-stack-label { font-family: var(--font-mono); font-size: 0.66rem; color: var(--text-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; opacity: 0; }
 .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; opacity: 0; }
 .hero-right { display: flex; flex-direction: column; gap: 14px; flex-shrink: 0; opacity: 0; }
-.hero-right .glass-card { min-width: 272px; }
+.hero-right .glass-card { min-width: 272px; background: rgba(255,255,255,0.05); }
 .hero-right .glass-card:hover { transform: translateX(-5px); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
-.hero-avatar-wrap { position: relative; display: flex; align-items: center; justify-content: center; flex-shrink: 0; opacity: 0; }
-.hero-avatar-glow { position: absolute; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(0,212,255,0.18) 0%, rgba(168,85,247,0.12) 50%, transparent 70%); filter: blur(24px); z-index: 0; }
-.hero-avatar-img { position: relative; z-index: 1; width: 300px; height: 300px; object-fit: cover; border-radius: 24px; border: 1px solid rgba(0,212,255,0.25); box-shadow: 0 0 40px rgba(0,212,255,0.15), 0 0 80px rgba(168,85,247,0.1), 0 20px 60px rgba(0,0,0,0.5); transition: box-shadow 0.3s ease, transform 0.3s ease; }
-.hero-avatar-img:hover { box-shadow: 0 0 60px rgba(0,212,255,0.25), 0 0 100px rgba(168,85,247,0.15), 0 20px 60px rgba(0,0,0,0.6); transform: translateY(-4px) scale(1.02); }
-.scroll-hint { position: absolute; bottom: 36px; left: 80px; display: flex; align-items: center; gap: 12px; opacity: 0; }
-.scroll-line { width: 44px; height: 1px; background: linear-gradient(90deg,transparent,var(--text-muted)); }
-.scroll-text { font-family: var(--font-mono); font-size: 0.66rem; color: var(--text-muted); letter-spacing: 0.15em; }
 
 /* ── About ── */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
@@ -407,13 +405,12 @@
 
 /* ── Global responsive ── */
 @media(max-width:1100px) {
-  .hero-wrap { flex-direction: column; padding: 80px 40px 60px; }
+  .hero-wrap { padding: 40px 24px 60px; }
+  .hero-card { flex-direction: column; align-items: stretch; padding: 36px 28px; gap: 32px; }
+  .hero-left { flex: none; }
   .hero-right { flex-direction: row; flex-wrap: wrap; width: 100%; }
   .hero-right .glass-card { min-width: auto; flex: 1 1 200px; }
-  .hero-avatar-wrap { order: -1; }
-  .hero-avatar-img { width: 220px; height: 220px; }
-  .scroll-hint { left: 40px; }
-  .about-grid { grid-template-columns: 1fr; }
+        .about-grid { grid-template-columns: 1fr; }
   .tiers-grid { grid-template-columns: 1fr 1fr; }
   .svc-support-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -427,10 +424,15 @@
 @media(max-width:640px) {
   .hero-name { font-size: clamp(2.8rem,12vw,4.2rem); }
   .tiers-grid { grid-template-columns: 1fr; }
-  .scroll-hint { display: none; }
-  .ct-hero-title { font-size: clamp(44px, 10vw, 80px); letter-spacing: -0.01em; }
+    .ct-hero-title { font-size: clamp(44px, 10vw, 80px); letter-spacing: -0.01em; }
   .fm-hero-title { font-size: clamp(38px, 9vw, 72px); letter-spacing: -0.01em; }
   .ct-hero-content, .fm-hero-content { padding: 0 20px; width: 100%; }
   .ct-hero-badge, .fm-hero-badge { font-size: 0.55rem; letter-spacing: 0.14em; padding: 5px 12px; }
   .ct-hero-sub, .fm-hero-sub { font-size: 0.65rem; letter-spacing: 0.14em; }
 }
+
+/* Hero card: brighter secondary text over the background image */
+.hero-card .hero-tagline, .hero-card .card-desc { color: #C3CCDF; }
+.hero-card .card-label { color: #9FB0D0; }
+.hero-right .glass-card { background: rgba(255,255,255,0.06); }
+.hero-stack .hero-stack-label, .hero-stack .hero-chips { opacity: 1; }
