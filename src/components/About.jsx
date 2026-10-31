@@ -3,12 +3,14 @@ import { SEO_ROUTES } from "../seoData";
 
 export default function About() {
   return (
-    <div className="inner-section">
+    <div className="inner-section about-section">
       <Seo {...SEO_ROUTES.about} />
-      <div className="section-tag">01 — About</div>
-      <h1 className="section-heading">The Road That<br />Built the Engineer</h1>
 
-      <div className="about-grid">
+      {/* Card 1: heading + bio */}
+      <div className="pb-card">
+        <div className="section-tag">01 — About</div>
+        <h1 className="section-heading">The Road That<br />Built the Engineer</h1>
+
         <div className="about-bio">
           <p>My name is <strong>Clarence Downs</strong>, though most people call me <strong>Faheem</strong>, and many know me as <strong className="hl">Professor Bone</strong>. I am an emerging agentic AI systems engineer and the founder of <strong>Professor Bone Lab</strong>.</p>
           <p>The name has a story. My father was a soldier in the Vietnam War, and we lived on base in Germany. My mother says the GIs used to play with me as an infant and were amazed at my physical strength. Those soldiers gave me the name <strong>Bone Crusher</strong>. As time moved on, the name changed: the &ldquo;Crusher&rdquo; was dropped, and I was just <strong>Bone</strong>.</p>
@@ -20,13 +22,17 @@ export default function About() {
           <p>All the while, I was building my skills in computer technology, programming, and AI. What began as curiosity became disciplined study, then system design, technical writing, and the architecture of multi-agent AI environments. Today, my work centers on building AI systems that are not only intelligent, but <strong className="hl">governable, observable, and usable in real-world settings</strong>. I am completing the <strong>Agentic AI Certificate Program at Johns Hopkins University</strong> and pursuing the <strong>Claude Certified Architect</strong> designation through Anthropic. My work focuses on agentic systems, evaluation frameworks, and governance-first architectures such as <strong>PACS (Perception, Analysis, Control Systems)</strong>.</p>
           <p>Right now, I am putting that into practice in two places. The first is <a className="hl" href="https://www.newarkai.org" target="_blank" rel="noopener"><strong>Newark AI</strong></a>, an institution I am building for artificial intelligence in Newark, for people across generations, beginning with a program for our youth. It is still in development. The second is my ongoing research into <strong>Constitutional Runtime Computation (CRC)</strong>, which continues to shape how I think about governing agentic systems.</p>
           <p>I am also building <strong>Unc's AI Academy</strong> — an educational initiative focused on helping adult learners and career changers develop practical, real-world skills in AI. The mission is rooted in my own journey: creating a pathway into technology for those who did not start there, but are willing to build.</p>
-          <div className="faith-note">
-            Because intelligence alone is not enough.<br />
-            Systems must be built to operate in reality.
-          </div>
         </div>
+      </div>
 
-        <div className="identity-card">
+      {/* Card 2: closing note */}
+      <div className="pb-card faith-note">
+        Because intelligence alone is not enough.<br />
+        Systems must be built to operate in reality.
+      </div>
+
+      {/* Card 3: identity */}
+      <div className="pb-card identity-card">
           <h2>Clarence Downs</h2>
           <div className="title-row">A.K.A. PROFESSOR BONE</div>
           <div className="identity-divider" />
@@ -51,7 +57,6 @@ export default function About() {
               <span>{k}</span> {v}
             </div>
           ))}
-        </div>
       </div>
     </div>
   );
