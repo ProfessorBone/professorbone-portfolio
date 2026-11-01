@@ -27,11 +27,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.professorbone.com/academy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.professorbone.com/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
@@ -43,11 +38,6 @@
   </url>
   <url>
     <loc>https://www.professorbone.com/freightmind</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.professorbone.com/buildguide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

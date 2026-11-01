@@ -35,7 +35,7 @@ export default function Hero({ setPage }) {
               <strong>AI Systems Architect · Logistics Technologist · Educator.</strong><br />
               From real-world logistics to agentic AI systems, I design{" "}
               <span className="hl">intelligent infrastructure built to operate under pressure.</span><br />
-              Founder of <strong>Professor Bone Lab</strong>. Building <strong>Unc's AI Academy</strong>.
+              Founder of <strong>Professor Bone Lab</strong>.
             </p>
           </div>
 

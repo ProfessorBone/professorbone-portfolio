@@ -81,13 +81,6 @@ export const SEO_ROUTES = {
     canonical: '/education',
   },
 
-  academy: {
-    title: "Unc's AI Academy — Practical AI Education | Professor Bone",
-    description:
-      "Unc's AI Academy is a practical AI education initiative for adult learners and career changers. Four build tiers: Foundations, Builder, Systems, and Architect.",
-    canonical: '/academy',
-  },
-
   contact: {
     title: "Let's Talk — AI Engineering, Research & Collaboration | Professor Bone",
     description:
@@ -132,23 +125,6 @@ export const SEO_ROUTES = {
       author: PERSON_REF,
       url: `${BASE_URL}/freightmind`,
       applicationCategory: 'Artificial Intelligence',
-    },
-  },
-
-  buildguide: {
-    title: 'AI Agent Build Guide — Field Manual for Agentic AI | Professor Bone',
-    description:
-      'A 172-page step-by-step field manual for building AI agents across four tiers of increasing power. Written by Clarence Downs covering 9 AGI phases and 7 event classes.',
-    canonical: '/buildguide',
-    structuredData: {
-      '@context': 'https://schema.org',
-      '@type': 'Book',
-      name: 'AI Agent Build Guide',
-      author: PERSON_REF,
-      url: `${BASE_URL}/buildguide`,
-      description:
-        'A field manual for building AI agents from Basic to Kick-Ass across four tiers of increasing power.',
-      numberOfPages: 172,
     },
   },
 

@@ -47,7 +47,6 @@ export default function Footer({ setPage }) {
           <ul className="pb-footer-nav" style={{ marginBottom: "12px" }}>
             <li><a href="/about" className="pb-footer-link" onClick={(e) => go("about", e)}>About</a></li>
             <li><a href="/education" className="pb-footer-link" onClick={(e) => go("education", e)}>Education</a></li>
-            <li><a href="/academy" className="pb-footer-link" onClick={(e) => go("academy", e)}>Unc's AI Academy</a></li>
           </ul>
           <a href="/contact" className="pb-footer-cta" onClick={(e) => go("contact", e)}>Let's Talk</a>
         </div>

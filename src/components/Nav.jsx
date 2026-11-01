@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Nav({ page, setPage }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const links = ["home", "about", "projects", "research", "education", "academy"];
+  const links = ["home", "about", "projects", "research", "education"];
 
   function go(p, e) {
     e.preventDefault();
@@ -26,15 +26,6 @@ export default function Nav({ page, setPage }) {
               </a>
             </li>
           ))}
-          <li>
-            <a
-              className={`nav-build-guide ${page === "buildguide" ? "active" : ""}`}
-              href="/buildguide"
-              onClick={(e) => go("buildguide", e)}
-            >
-              Build Guide
-            </a>
-          </li>
           <li>
             <a className="nav-cta" href="/contact" onClick={(e) => go("contact", e)}>
               Let's Talk
@@ -68,15 +59,6 @@ export default function Nav({ page, setPage }) {
               </a>
             </li>
           ))}
-          <li>
-            <a
-              className={`nav-mobile-buildguide ${page === "buildguide" ? "active" : ""}`}
-              href="/buildguide"
-              onClick={(e) => go("buildguide", e)}
-            >
-              Build Guide
-            </a>
-          </li>
           <li>
             <a
               className="nav-mobile-cta"

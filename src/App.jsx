@@ -7,14 +7,12 @@ import About      from "./components/About";
 import Projects   from "./components/Projects";
 import Research   from "./components/Research";
 import Education  from "./components/Education";
-import Academy    from "./components/Academy";
 import Contact    from "./components/Contact";
 import Continuum  from "./components/Continuum";
 import FreightMind from "./components/FreightMind";
-import BuildGuide from "./components/BuildGuide";
 import Footer     from "./components/Footer";
 
-const VALID_PAGES = ["home","about","projects","research","education","academy","contact","continuum","freightmind","buildguide"];
+const VALID_PAGES = ["home","about","projects","research","education","contact","continuum","freightmind"];
 const VALID_PAPERS = ["agent-state","orchestrator","cognitive","epistemic","ggib-1","ggib-2","ggib-3","ggib-4","ggib-5","ggib-6"];
 
 function pageFromPath() {
@@ -70,16 +68,6 @@ export default function App() {
     );
   }
 
-  if (page === "buildguide") {
-    return (
-      <>
-        <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /><div className="orb orb-3" /></div>
-        <BuildGuide setPage={navigate} />
-        <Footer setPage={navigate} />
-      </>
-    );
-  }
-
   // For /research/[paper-id], extract the sub-path and pass as initialPaper
   const isResearchSub = page.startsWith("research/");
   const basePage = isResearchSub ? "research" : page;
@@ -91,7 +79,6 @@ export default function App() {
     projects:  <Projects setPage={navigate} />,
     research:  <Research initialPaper={initialPaper} setPage={navigate} />,
     education: <Education />,
-    academy:   <Academy />,
     contact:   <Contact />,
   };
 

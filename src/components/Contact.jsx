@@ -1,5 +1,5 @@
 const contacts = [
-  { label: "Email",    title: "clarenced2@icloud.com",            desc: "Best for hiring inquiries, research collaboration, and Academy questions.", href: "mailto:clarenced2@icloud.com" },
+  { label: "Email",    title: "clarenced2@icloud.com",            desc: "Best for hiring inquiries and research collaboration.", href: "mailto:clarenced2@icloud.com" },
   { label: "LinkedIn", title: "linkedin.com/in/clarencedowns",     desc: "Connect for professional networking and career opportunities.",             href: "https://www.linkedin.com/in/clarencedowns/" },
   { label: "GitHub",   title: "github.com/ProfessorBone",          desc: "Source code, project repositories, and open research artifacts.",           href: "https://github.com/ProfessorBone" },
 ];
@@ -14,7 +14,7 @@ export default function Contact() {
       <div className="section-tag">07 — Contact</div>
       <h1 className="section-heading">Let's<br />Connect</h1>
       <p className="section-sub">
-        Hiring for AI engineering roles, research collaboration, or interested in Unc's AI Academy?
+        Hiring for AI engineering roles or interested in research collaboration?
         Reach out — I read everything.
       </p>
       <div style={{display:"flex",flexDirection:"column",gap:"14px"}}>

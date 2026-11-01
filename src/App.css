@@ -333,33 +333,16 @@
 .edu-detail::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--cyan); flex-shrink: 0; }
 .edu-icon { font-size: 3.5rem; opacity: 0.35; }
 
-/* ── Academy ── */
-.academy-hero { background: linear-gradient(135deg,rgba(0,212,255,0.06),rgba(155,77,255,0.06)); border: 1px solid rgba(0,212,255,0.12); border-radius: 24px; padding: 48px; margin-bottom: 40px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
-.academy-title { font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 14px; }
-.academy-sub { font-size: 0.96rem; color: var(--text-secondary); line-height: 1.75; max-width: 520px; }
-.academy-sub strong { color: var(--text-primary); font-weight: 500; }
-.academy-stat { text-align: center; }
-.stat-num { font-family: var(--font-display); font-size: 3rem; font-weight: 800; background: linear-gradient(130deg,var(--cyan),var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.stat-label { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); letter-spacing: 0.14em; margin-top: 4px; }
-.tiers-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
-.tier-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 22px; transition: all 0.3s; }
-.tier-card:hover { border-color: rgba(0,212,255,0.2); transform: translateY(-3px); }
-.tier-num { font-family: var(--font-mono); font-size: 0.65rem; color: var(--cyan); letter-spacing: 0.18em; margin-bottom: 10px; }
-.tier-name { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
-.tier-desc { font-size: 0.76rem; color: var(--text-secondary); line-height: 1.6; }
 
 /* ── Global responsive ── */
 @media(max-width:1100px) {
         .about-grid { grid-template-columns: 1fr; }
-  .tiers-grid { grid-template-columns: 1fr 1fr; }
 }
 @media(max-width:800px) {
   .edu-grid { grid-template-columns: 1fr; }
   .edu-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
-  .academy-hero { grid-template-columns: 1fr; }
 }
 @media(max-width:640px) {
-  .tiers-grid { grid-template-columns: 1fr; }
     .ct-hero-title { font-size: clamp(44px, 10vw, 80px); letter-spacing: -0.01em; }
   .fm-hero-title { font-size: clamp(38px, 9vw, 72px); letter-spacing: -0.01em; }
   .ct-hero-content, .fm-hero-content { padding: 0 20px; width: 100%; }

@@ -48,7 +48,7 @@ body {
   .pb-logo-bg-right { background-position: right 3vw top; }
   .page-content > .inner-section, .page-content .paper-wrap { width: min(680px, 48vw); margin: 24px auto 40px 24px; }
   .page-content > .inner-section .about-grid { grid-template-columns: 1fr; gap: 36px; }
-  .page-content > .inner-section :is(.tiers-grid, .edu-grid, .projects-grid) { grid-template-columns: 1fr; }
+  .page-content > .inner-section :is(.edu-grid, .projects-grid) { grid-template-columns: 1fr; }
 }
 /* Portrait screens: fill the width instead of leaving bars above and below */
 @media (orientation: portrait) {
