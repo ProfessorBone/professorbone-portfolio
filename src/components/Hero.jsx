@@ -53,14 +53,14 @@ export default function Hero({ setPage }) {
             <div className="card-desc">UPS Mgmt (2017) · LaM Logistics LLC (2022)<br />Walmart Private Fleet (2025)</div>
           </div>
           <div className="glass-card">
-            <div className="card-label">Active Builds</div>
-            <div className="card-title">TRIL · PACS · Continuum</div>
-            <div className="card-desc">Governance-first multi-agent architecture<br />Mac Studio M3 Ultra · 192GB unified memory</div>
+            <div className="card-label">Active Projects</div>
+            <div className="card-title">Newark AI</div>
+            <div className="card-desc">In development<br />AEGIS · Paused</div>
           </div>
           <div className="glass-card">
             <div className="card-label">Education</div>
             <div className="card-title">JHU · Daytona State · Anthropic</div>
-            <div className="card-desc">Agentic AI Certificate · B.S. Info Tech<br />Claude Certified Architect (in progress)</div>
+            <div className="card-desc">Agentic AI Certificate · B.S. Info Tech<br />Claude Certified Architect</div>
           </div>
         </div>
       </div>
