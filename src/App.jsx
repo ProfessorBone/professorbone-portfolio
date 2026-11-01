@@ -12,10 +12,9 @@ import Contact    from "./components/Contact";
 import Continuum  from "./components/Continuum";
 import FreightMind from "./components/FreightMind";
 import BuildGuide from "./components/BuildGuide";
-import Services   from "./components/Services";
 import Footer     from "./components/Footer";
 
-const VALID_PAGES = ["home","about","projects","services","research","education","academy","contact","continuum","freightmind","buildguide"];
+const VALID_PAGES = ["home","about","projects","research","education","academy","contact","continuum","freightmind","buildguide"];
 const VALID_PAPERS = ["agent-state","orchestrator","cognitive","epistemic","ggib-1","ggib-2","ggib-3","ggib-4","ggib-5","ggib-6"];
 
 function pageFromPath() {
@@ -90,7 +89,6 @@ export default function App() {
     home:      <Hero setPage={navigate} />,
     about:     <About />,
     projects:  <Projects setPage={navigate} />,
-    services:  <Services setPage={navigate} />,
     research:  <Research initialPaper={initialPaper} setPage={navigate} />,
     education: <Education />,
     academy:   <Academy />,

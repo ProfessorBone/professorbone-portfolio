@@ -54,9 +54,9 @@ export const SEO_ROUTES = {
   },
 
   projects: {
-    title: 'Projects — Agentic AI Systems | Professor Bone',
+    title: 'Projects — Newark AI and AEGIS | Professor Bone',
     description:
-      'Production-grade agentic AI infrastructure built on real logistics context. CONTINUUM: a governed 8-agent control system. FREIGHTMIND: a two-agent field operations system.',
+      'Newark AI, an independent civic institution for AI literacy in Newark, and AEGIS, a governed multi-agent architecture for clinical practice. Current work by Clarence Downs.',
     canonical: '/projects',
   },
 
@@ -86,22 +86,6 @@ export const SEO_ROUTES = {
     description:
       "Unc's AI Academy is a practical AI education initiative for adult learners and career changers. Four build tiers: Foundations, Builder, Systems, and Architect.",
     canonical: '/academy',
-  },
-
-  services: {
-    title: 'Services — Governance-First AI Systems | Professor Bone',
-    description:
-      'Governed AI architecture, multi-agent systems design, and agentic web applications. Clarence Downs builds constraint-governed, production-grade AI systems for organizations that need reliability, compliance, and operational clarity.',
-    canonical: '/services',
-    structuredData: {
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      name: 'Services — Governance-First AI Systems',
-      url: `${BASE_URL}/services`,
-      author: PERSON_REF,
-      description:
-        'Governed AI architecture, multi-agent systems design, and agentic web applications built by Clarence Downs.',
-    },
   },
 
   contact: {

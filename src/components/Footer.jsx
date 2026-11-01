@@ -27,26 +27,12 @@ export default function Footer({ setPage }) {
           </div>
         </div>
 
-        {/* Column 2 — Services */}
-        <div className="pb-footer-col">
-          <div className="pb-footer-col-label">Services</div>
-          <ul className="pb-footer-nav">
-            <li><a href="/services" className="pb-footer-link pb-footer-link-primary" onClick={(e) => go("services", e)}>Governed AI Architecture</a></li>
-            <li><a href="/services" className="pb-footer-link" onClick={(e) => go("services", e)}>Multi-Agent Systems</a></li>
-            <li><a href="/services" className="pb-footer-link" onClick={(e) => go("services", e)}>Agentic Web Apps</a></li>
-            <li><a href="/services" className="pb-footer-link" onClick={(e) => go("services", e)}>RAG &amp; Knowledge Systems</a></li>
-            <li><a href="/services" className="pb-footer-link" onClick={(e) => go("services", e)}>Full-Stack AI Integration</a></li>
-            <li><a href="/services" className="pb-footer-link" onClick={(e) => go("services", e)}>Privacy &amp; Compliance AI</a></li>
-          </ul>
-        </div>
-
-        {/* Column 3 — Work */}
+        {/* Column 2 — Work */}
         <div className="pb-footer-col">
           <div className="pb-footer-col-label">Work</div>
           <ul className="pb-footer-nav" style={{ marginBottom: "12px" }}>
-            <li><a href="/continuum" className="pb-footer-link" onClick={(e) => go("continuum", e)}>Continuum</a></li>
-            <li><a href="/freightmind" className="pb-footer-link" onClick={(e) => go("freightmind", e)}>FreightMind</a></li>
-            <li><a href="/buildguide" className="pb-footer-link" onClick={(e) => go("buildguide", e)}>Build Guide</a></li>
+            <li><a href="/projects" className="pb-footer-link" onClick={(e) => go("projects", e)}>Newark AI</a></li>
+            <li><a href="/projects" className="pb-footer-link" onClick={(e) => go("projects", e)}>Aegis</a></li>
           </ul>
           <div className="pb-footer-col-label">Research</div>
           <ul className="pb-footer-nav">
@@ -55,14 +41,13 @@ export default function Footer({ setPage }) {
           </ul>
         </div>
 
-        {/* Column 4 — Connect */}
+        {/* Column 3 — Connect */}
         <div className="pb-footer-col">
           <div className="pb-footer-col-label">Connect</div>
           <ul className="pb-footer-nav" style={{ marginBottom: "12px" }}>
             <li><a href="/about" className="pb-footer-link" onClick={(e) => go("about", e)}>About</a></li>
             <li><a href="/education" className="pb-footer-link" onClick={(e) => go("education", e)}>Education</a></li>
             <li><a href="/academy" className="pb-footer-link" onClick={(e) => go("academy", e)}>Unc's AI Academy</a></li>
-            <li><a href="/services" className="pb-footer-link" onClick={(e) => go("services", e)}>Services</a></li>
           </ul>
           <a href="/contact" className="pb-footer-cta" onClick={(e) => go("contact", e)}>Let's Talk</a>
         </div>
