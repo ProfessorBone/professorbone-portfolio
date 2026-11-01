@@ -2,13 +2,14 @@
 .page-content > .inner-section.crc-research {
   --crc-copy: #c1cce0;
   --crc-muted: #a1b1cc;
-  --crc-panel-filter: blur(3px) saturate(1.1);
+  --crc-panel-filter: blur(20px) saturate(1.1);
   display: flex;
   flex-direction: column;
   gap: 28px;
   width: calc(100% - 48px);
   max-width: 1320px;
-  margin: 24px auto 48px;
+  /* The laptop begins about halfway down the centered background logo. */
+  margin: calc(var(--logo-size) * 0.54) auto 48px;
   padding: 0;
   background: none;
   border: 0;
@@ -22,7 +23,7 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr);
   gap: 48px;
   padding: 44px;
-  background: rgba(14,22,44,0.38);
+  background: rgba(14,22,44,0.82);
   border: 1px solid rgba(196,222,255,0.24);
   border-radius: 24px;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 12px 30px rgba(0,0,0,0.28);
