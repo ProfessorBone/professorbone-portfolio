@@ -2,7 +2,8 @@
 .crc-research {
   --crc-copy: #c1cce0;
   --crc-muted: #a1b1cc;
-  --crc-panel-filter: blur(12px) saturate(1.15);
+  --crc-panel-filter: blur(3px) saturate(1.1);
+  background: rgba(14,22,44,0.38);
   -webkit-backdrop-filter: var(--crc-panel-filter);
   backdrop-filter: var(--crc-panel-filter);
 }
