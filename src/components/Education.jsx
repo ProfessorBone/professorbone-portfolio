@@ -3,22 +3,28 @@ import { SEO_ROUTES } from "../seoData";
 
 export default function Education() {
   return (
-    <div className="inner-section">
+    <main className="inner-section frosted-page" aria-labelledby="education-heading">
       <Seo {...SEO_ROUTES.education} />
+      <header className="frosted-card frosted-header frosted-row">
+      <div>
       <div className="section-tag">05 — Education</div>
-      <h1 className="section-heading">Credentials &amp;<br />Certifications</h1>
+      <h1 className="section-heading" id="education-heading">Credentials &amp;<br />Certifications</h1>
+      </div>
       <p className="section-sub">
         A non-traditional path built on real systems and serious study.
         Every credential earned while logging miles across the Northeast.
       </p>
+      </header>
 
       <div className="edu-section-label">Degrees</div>
-      <div className="edu-grid" style={{marginBottom:"48px"}}>
-        <div className="edu-card featured">
-          <div>
+      <div className="edu-grid">
+        <div className="edu-card featured frosted-card frosted-row">
+          <div className="frosted-card-heading">
             <div className="edu-badge">Bachelor of Science</div>
             <div className="edu-institution">Daytona State College</div>
             <div className="edu-program">B.S. — Information Technology</div>
+          </div>
+          <div>
             <div className="edu-details">
               <div className="edu-detail">Applied computing systems and IT infrastructure</div>
               <div className="edu-detail">Foundation for AI engineering and systems architecture</div>
@@ -28,11 +34,13 @@ export default function Education() {
           </div>
         </div>
 
-        <div className="edu-card featured">
-          <div>
+        <div className="edu-card featured frosted-card frosted-row">
+          <div className="frosted-card-heading">
             <div className="edu-badge">Associate of Science</div>
             <div className="edu-institution">Daytona State College</div>
             <div className="edu-program">A.S. — Networking Systems Technology</div>
+          </div>
+          <div>
             <div className="edu-details">
               <div className="edu-detail">Network architecture, protocols, and systems administration</div>
               <div className="edu-detail">Underpins Tailscale mesh and edge node infrastructure work</div>
@@ -45,33 +53,44 @@ export default function Education() {
 
       <div className="edu-section-label">Certifications</div>
       <div className="edu-grid">
-        <div className="edu-card">
+        <div className="edu-card frosted-card frosted-row">
+          <div className="frosted-card-heading">
           <div className="edu-badge">Graduate Certificate</div>
           <div className="edu-institution">Johns Hopkins University</div>
           <div className="edu-program">Agentic AI Certificate Program</div>
+          </div>
+          <div>
           <div className="edu-details" style={{marginBottom:"18px"}}>
             <div className="edu-detail">Agentic AI system design and multi-agent architecture</div>
             <div className="edu-detail">Original research — Professor Bone Lab</div>
           </div>
           <span className="cert-status complete">Completed</span>
+          </div>
         </div>
 
-        <div className="edu-card">
+        <div className="edu-card frosted-card frosted-row">
+          <div className="frosted-card-heading">
           <div className="edu-badge">Certification</div>
           <div className="edu-institution">Anthropic Academy</div>
           <div className="edu-program">Claude Certified Architect (CCA)</div>
+          </div>
+          <div>
           <div className="edu-details" style={{marginBottom:"18px"}}>
             <div className="edu-detail">Claude 101 — Completed</div>
             <div className="edu-detail">Building with the Claude API — Completed</div>
             <div className="edu-detail">47 study notes in Obsidian vault</div>
           </div>
           <span className="cert-status in-progress">Completed</span>
+          </div>
         </div>
 
-        <div className="edu-card">
+        <div className="edu-card frosted-card frosted-row">
+          <div className="frosted-card-heading">
           <div className="edu-badge">Great Learning</div>
           <div className="edu-institution">Advanced Python: From Analytics to AI</div>
           <div className="edu-program">Certificate Program · August 2025</div>
+          </div>
+          <div>
           <div className="edu-details" style={{marginBottom:"18px"}}>
             <div className="edu-detail">Python for data analytics, machine learning, and AI pipelines</div>
             <div className="edu-detail">
@@ -82,12 +101,16 @@ export default function Education() {
             </div>
           </div>
           <span className="cert-status complete">Completed Aug 2025</span>
+          </div>
         </div>
 
-        <div className="edu-card">
+        <div className="edu-card frosted-card frosted-row">
+          <div className="frosted-card-heading">
           <div className="edu-badge">⊞ Great Learning × Microsoft</div>
           <div className="edu-institution">Generative AI For Business</div>
           <div className="edu-program">MSFT Azure OpenAI Program · July 2024</div>
+          </div>
+          <div>
           <div className="edu-details" style={{marginBottom:"18px"}}>
             <div className="edu-detail">Generative AI applications on Azure OpenAI Service</div>
             <div className="edu-detail">
@@ -98,8 +121,9 @@ export default function Education() {
             </div>
           </div>
           <span className="cert-status complete">Completed Jul 2024</span>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

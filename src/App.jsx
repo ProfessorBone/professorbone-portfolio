@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./index.css";
 import "./App.css";
+import "./frosted-pages.css";
 import Nav        from "./components/Nav";
 import Hero       from "./components/Hero";
 import About      from "./components/About";
@@ -84,7 +85,7 @@ export default function App() {
 
   return (
     <>
-      <div className={`pb-logo-bg ${basePage === "home" || page === "research" ? "" : "pb-logo-bg-right"}`} />
+      <div className={`pb-logo-bg ${["home", "about", "projects", "education", "research"].includes(page) ? "" : "pb-logo-bg-right"}`} />
       <Nav page={basePage} setPage={navigate} />
       <div className="page-content">
         {pages[basePage] || <Hero setPage={navigate} />}

@@ -1,0 +1,85 @@
+/* About, Projects, and Education share the Research page's card treatment. */
+.page-content > .inner-section.frosted-page {
+  --page-card-filter: blur(20px) saturate(1.1);
+  --page-card-copy: #c1cce0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: calc(100% - 48px);
+  max-width: 1320px;
+  margin: calc(var(--logo-size) * 0.54) auto 48px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.page-content .frosted-page .frosted-card {
+  min-width: 0;
+  margin: 0;
+  padding: 44px;
+  background: rgba(14,22,44,0.82);
+  border: 1px solid rgba(196,222,255,0.24);
+  border-radius: 24px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 12px 30px rgba(0,0,0,0.28);
+  -webkit-backdrop-filter: var(--page-card-filter);
+  backdrop-filter: var(--page-card-filter);
+  transform: none;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+.page-content .frosted-page .frosted-row {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1.9fr);
+  gap: 48px;
+  align-items: start;
+}
+.frosted-row > * { min-width: 0; }
+.frosted-card-heading { padding-right: 28px; border-right: 1px solid rgba(255,255,255,0.14); align-self: stretch; }
+.frosted-page .section-heading { font-size: clamp(2rem,3.8vw,3.4rem); margin-bottom: 0; }
+.frosted-page .section-sub { color: var(--page-card-copy); margin: 0; align-self: center; }
+.page-content .frosted-page :is(.edu-grid,.projects-grid) { display: grid; grid-template-columns: 1fr; gap: 28px; }
+.frosted-page .edu-card.featured { grid-column: auto; }
+.frosted-page .edu-section-label { margin: 10px 0 -10px; }
+.frosted-page :is(.about-bio,.proj-body p,.edu-program,.edu-detail,.identity-detail) { color: var(--page-card-copy); }
+.frosted-page .about-bio { font-size: 0.98rem; }
+.frosted-page .about-bio p:last-child { margin-bottom: 0; }
+.frosted-page .identity-card h2 { font-family: var(--font-display); font-size: 1.8rem; line-height: 1.3; margin-bottom: 10px; }
+.frosted-page .identity-detail { display: grid; grid-template-columns: 85px minmax(0,1fr); gap: 14px; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.08); margin: 0; }
+.frosted-page .identity-detail span { color: #a1b1cc; margin: 0; padding-top: 2px; }
+.frosted-page .proj-body { margin: 0; padding: 0; border: 0; }
+.frosted-page .proj-body p { font-size: 0.98rem; line-height: 1.85; }
+.frosted-page .proj-inline-link { white-space: normal; }
+.frosted-page .proj-logo { width: min(220px,80%); }
+.frosted-page .proj-logo-wide { width: min(280px,90%); }
+.frosted-page .edu-detail { line-height: 1.7; align-items: baseline; flex-wrap: wrap; }
+.frosted-page .edu-detail a { overflow-wrap: anywhere; color: var(--cyan) !important; }
+.frosted-page .edu-card::after { display: none; }
+.page-content .frosted-page .frosted-card:focus-within {
+  border-color: rgba(0,212,255,0.6);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 18px 42px rgba(0,0,0,0.4), 0 0 24px rgba(0,212,255,0.14);
+}
+.frosted-page a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; border-radius: 2px; }
+@media (hover: hover) and (pointer: fine) {
+  .page-content .frosted-page .frosted-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0,212,255,0.6);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 20px 44px rgba(0,0,0,0.4), 0 0 28px rgba(0,212,255,0.16);
+  }
+}
+@media (max-width: 900px) {
+  .page-content .frosted-page .frosted-row { grid-template-columns: 1fr; gap: 24px; }
+  .page-content .frosted-page .frosted-card { padding: 32px; }
+  .frosted-card-heading { padding-right: 0; border-right: 0; }
+}
+@media (max-width: 640px) {
+  .page-content > .inner-section.frosted-page { width: calc(100% - 24px); gap: 22px; }
+  .page-content .frosted-page .frosted-card { padding: 28px 20px; border-radius: 20px; }
+  .page-content .frosted-page :is(.edu-grid,.projects-grid) { gap: 22px; }
+  .frosted-page .identity-detail { grid-template-columns: 75px minmax(0,1fr); gap: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-content .frosted-page .frosted-card { transition: none; }
+  .page-content .frosted-page .frosted-card:hover { transform: none; }
+}

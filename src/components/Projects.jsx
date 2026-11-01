@@ -8,15 +8,18 @@ export default function Projects({ setPage }) {
   }
 
   return (
-    <div className="inner-section">
+    <main className="inner-section frosted-page" aria-labelledby="projects-heading">
       <Seo {...SEO_ROUTES.projects} />
+      <header className="frosted-card frosted-header">
       <div className="section-tag">02 — Projects</div>
-      <h1 className="section-heading">Current<br />Work</h1>
+      <h1 className="section-heading" id="projects-heading">Current Work</h1>
+      </header>
 
       <div className="projects-grid">
 
         {/* ── NEWARK AI ── */}
-        <article className="pb-card proj-feature" id="newark-ai">
+        <article className="pb-card proj-feature frosted-card frosted-row" id="newark-ai">
+          <div className="project-summary frosted-card-heading">
           <img className="proj-logo" src="/newarkai-logo.png" alt="Newark AI logo" width="800" height="695" />
           <div className="proj-status proj-status-live">In development</div>
           <h2 className="proj-feature-title">
@@ -31,6 +34,7 @@ export default function Projects({ setPage }) {
             {["Civic Institution", "AI Literacy", "Youth Education", "Institutional Governance"].map((t) => (
               <span key={t} className="proj-tag">{t}</span>
             ))}
+          </div>
           </div>
           <div className="proj-body">
             <p>
@@ -61,7 +65,8 @@ export default function Projects({ setPage }) {
         </article>
 
         {/* ── AEGIS ── */}
-        <article className="pb-card proj-feature" id="aegis">
+        <article className="pb-card proj-feature frosted-card frosted-row" id="aegis">
+          <div className="project-summary frosted-card-heading">
           <img className="proj-logo proj-logo-wide" src="/aegis-logo.png" alt="AEGIS logo" width="900" height="785" />
           <div className="proj-status proj-status-paused">Paused</div>
           <h2 className="proj-feature-title">AEGIS</h2>
@@ -74,6 +79,7 @@ export default function Projects({ setPage }) {
             {["AI Governance", "Multi-Agent Systems", "Clinical Practice", "Runtime Architecture"].map((t) => (
               <span key={t} className="proj-tag">{t}</span>
             ))}
+          </div>
           </div>
           <div className="proj-body">
             <p>
@@ -124,6 +130,6 @@ export default function Projects({ setPage }) {
         </article>
 
       </div>
-    </div>
+    </main>
   );
 }

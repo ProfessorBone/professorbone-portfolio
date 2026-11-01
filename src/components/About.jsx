@@ -3,13 +3,15 @@ import { SEO_ROUTES } from "../seoData";
 
 export default function About() {
   return (
-    <div className="inner-section about-section">
+    <main className="inner-section about-section frosted-page" aria-labelledby="about-heading">
       <Seo {...SEO_ROUTES.about} />
 
       {/* Card 1: heading + bio */}
-      <div className="pb-card">
+      <article className="pb-card frosted-card frosted-row">
+        <div className="frosted-card-heading">
         <div className="section-tag">01 — About</div>
-        <h1 className="section-heading">The Road That<br />Built the Engineer</h1>
+        <h1 className="section-heading" id="about-heading">The Road That<br />Built the Engineer</h1>
+        </div>
 
         <div className="about-bio">
           <p>My name is <strong>Clarence Downs</strong>, though most people call me <strong>Faheem</strong>, and many know me as <strong className="hl">Professor Bone</strong>. I am an emerging agentic AI systems engineer and the founder of <strong>Professor Bone Lab</strong>.</p>
@@ -22,19 +24,22 @@ export default function About() {
           <p>All the while, I was building my skills in computer technology, programming, and AI. What began as curiosity became disciplined study, then system design, technical writing, and the architecture of multi-agent AI environments. Today, my work centers on building AI systems that are not only intelligent, but <strong className="hl">governable, observable, and usable in real-world settings</strong>. I am completing the <strong>Agentic AI Certificate Program at Johns Hopkins University</strong> and pursuing the <strong>Claude Certified Architect</strong> designation through Anthropic. My work focuses on agentic systems, evaluation frameworks, and governance-first architectures such as <strong>PACS (Perception, Analysis, Control Systems)</strong>.</p>
           <p>Right now, I am putting that into practice in two places. The first is <a className="hl" href="https://www.newarkai.org" target="_blank" rel="noopener"><strong>Newark AI</strong></a>, an institution I am building for artificial intelligence in Newark, for people across generations, beginning with a program for our youth. It is still in development. The second is my ongoing research into <strong>Constitutional Runtime Computation (CRC)</strong>, which continues to shape how I think about governing agentic systems.</p>
         </div>
-      </div>
+      </article>
 
       {/* Card 2: closing note */}
-      <div className="pb-card faith-note">
+      <div className="pb-card faith-note frosted-card">
         Because intelligence alone is not enough.<br />
         Systems must be built to operate in reality.
       </div>
 
       {/* Card 3: identity */}
-      <div className="pb-card identity-card">
-          <h2>Clarence Downs</h2>
+      <section className="pb-card identity-card frosted-card frosted-row" aria-labelledby="identity-heading">
+        <div className="frosted-card-heading">
+          <h2 id="identity-heading">Clarence Downs</h2>
           <div className="title-row">A.K.A. PROFESSOR BONE</div>
           <div className="identity-divider" />
+        </div>
+        <div className="identity-records">
           {[
             ["BASE",   "Tobyhanna, PA · Northeast US"],
             ["2016",   "A.S. Networking Systems Technology · Daytona State College"],
@@ -56,7 +61,8 @@ export default function About() {
               <span>{k}</span> {v}
             </div>
           ))}
-      </div>
-    </div>
+        </div>
+      </section>
+    </main>
   );
 }
