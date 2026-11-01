@@ -6,6 +6,7 @@ export default function Nav({ page, setPage }) {
   const links = ["home", "about", "projects", "research", "education"];
 
   function go(p, e) {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
     e.preventDefault();
     setPage(p);
     setMenuOpen(false);
@@ -14,6 +15,9 @@ export default function Nav({ page, setPage }) {
   return (
     <>
       <nav>
+        <a className="nav-brand" href="/" aria-label="Professor Bone home" onClick={(e) => go("home", e)}>
+          <img src="/cb-microphone-mark.svg" alt="" width="116" height="48" />
+        </a>
         {/* ── Desktop links ── */}
         <ul className="nav-links nav-desktop">
           {links.map((l) => (

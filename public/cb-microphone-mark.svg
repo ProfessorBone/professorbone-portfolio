@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 48" fill="none">
+  <defs>
+    <linearGradient id="cb-neon" x1="4" y1="42" x2="109" y2="6" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D4FF"/>
+      <stop offset=".52" stop-color="#BAEFFF"/>
+      <stop offset="1" stop-color="#B779FF"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#cb-neon)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M35 10.5C31.8 6.5 27.4 4.5 22 4.5C11.4 4.5 4.5 12.2 4.5 23.5C4.5 35 11.6 42.5 22 42.5C27.4 42.5 32 40.4 35.5 36.3L29.8 30.7C27.8 33.1 25.5 34.4 22.3 34.4C16.3 34.4 12.7 30.2 12.7 23.5C12.7 17 16.3 12.6 22.3 12.6C25.4 12.6 27.8 13.9 29.6 16.2Z"/>
+    <path d="M42.5 5.5H57.5C67.9 5.5 73 9.2 73 15.5C73 19.5 70.9 22.4 67.8 23.8C72.4 25.3 74.8 28.3 74.8 32.9C74.8 39.5 69.3 42 58 42H42.5Z"/>
+    <path d="M51 13H57C62.1 13 64.4 14.1 64.4 17C64.4 19.8 62.1 21 57.5 21H51Z"/>
+    <path d="M51 27.5H58.7C63.8 27.5 66 28.6 66 31.8C66 35 63.5 36.1 58.5 36.1H51Z"/>
+    <rect x="91" y="6" width="13" height="23" rx="6.5"/>
+    <path d="M86 22V24A11.5 11.5 0 0 0 109 24V22M97.5 35.5V42M90.5 42H104.5"/>
+    <path d="M94.5 13H100.5M94.5 17H100.5M94.5 21H100.5" opacity=".75"/>
+  </g>
+</svg>
