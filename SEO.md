@@ -60,7 +60,7 @@ scripts/
 
 public/
   robots.txt              — Allows all crawlers, references sitemap
-  sitemap.xml             — All 20 public routes (10 core + 10 research papers)
+  sitemap.xml             — All 18 public routes (8 core + 10 research papers)
 
 index.html                — Site-level defaults: OG, Twitter Card, description, canonical for /
 ```
@@ -76,6 +76,12 @@ index.html                — Site-level defaults: OG, Twitter Card, description
 5. Add `<Seo {...SEO_ROUTES.yourRoute} />` inside the new page component
 6. Run `npm run build` — the prerender step handles the rest automatically
 
+For an existing page with a significant content, metadata, or link update, maintain
+its accurate `<lastmod>` date in `public/sitemap.xml`. Do not advance dates merely
+because a build ran or the copyright year changed. The six main pages updated on
+2026-11-01 carry that date; dates for the other public pages remain omitted.
+See [Google's sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap).
+
 ---
 
 ## Route SEO Map
@@ -84,14 +90,12 @@ index.html                — Site-level defaults: OG, Twitter Card, description
 |---|---|---|
 | `/` | Professor Bone — AI Systems Architect & Logistics Technologist | WebSite + Person |
 | `/about` | About Clarence Downs — Professor Bone | ProfilePage |
-| `/projects` | Projects — Agentic AI Systems \| Professor Bone | — |
-| `/research` | Research — Agentic AI Papers & Frameworks \| Professor Bone Lab | CollectionPage |
+| `/projects` | Projects — Newark AI and AEGIS \| Professor Bone | — |
+| `/research` | Current Research — Constitutional Runtime Computation \| Professor Bone | WebPage |
 | `/education` | Education & Credentials — Clarence Downs \| Professor Bone | — |
-| `/academy` | Unc's AI Academy — Practical AI Education \| Professor Bone | — |
-| `/contact` | Let's Talk — AI Engineering, Research & Collaboration \| Professor Bone | ContactPage |
+| `/contact` | Let's Talk — Collaborative Research & Discussion \| Professor Bone | ContactPage |
 | `/continuum` | CONTINUUM — Governed Multi-Agent AI Control System \| Professor Bone | SoftwareApplication |
 | `/freightmind` | FREIGHTMIND — Multi-Agent Field Operations System \| Professor Bone | SoftwareApplication |
-| `/buildguide` | AI Agent Build Guide — Field Manual for Agentic AI \| Professor Bone | Book |
 | `/research/agent-state` | Agent State Framework — Professor Bone Lab · JHU | ScholarlyArticle |
 | `/research/orchestrator` | Orchestrator Epistemic Capture — Professor Bone Lab · JHU | ScholarlyArticle |
 | `/research/cognitive` | Cognitive Horizon — Professor Bone Lab · JHU | ScholarlyArticle |
@@ -193,11 +197,11 @@ Papers now have individual routes and `ScholarlyArticle` schema (for the 4 main 
 
 After deploying to production:
 
-1. **Confirm BASE_URL** — `src/seoData.js` line 2 must match the live domain. Currently set to `https://professorbone.com`.
+1. **Confirm BASE_URL** — `src/seoData.js` line 2 must match the live domain. Currently set to `https://www.professorbone.com`.
 
 2. **Google Search Console**
    - Verify site ownership (HTML tag or DNS method)
-   - Submit `https://professorbone.com/sitemap.xml`
+   - Submit `https://www.professorbone.com/sitemap.xml`
    - Request indexing for the home page
    - Monitor Coverage report for any crawl errors
 
@@ -208,7 +212,7 @@ After deploying to production:
    - LinkedIn Post Inspector: `https://www.linkedin.com/post-inspector/`
    - Twitter/X Card Validator: `https://cards-dev.twitter.com/validator`
    - Facebook Open Graph Debugger: `https://developers.facebook.com/tools/debug/`
-   - Test at least `/`, `/continuum`, `/research`, `/buildguide`
+   - Test at least `/`, `/about`, `/projects`, `/research`, `/education`, `/contact`
 
 5. **Indexing check** — after 3-7 days, run `site:professorbone.com` in Google to confirm all routes are indexed
 
@@ -222,7 +226,7 @@ After deploying to production:
 |---|---|---|
 | Canonical base URL | `src/seoData.js` line 2 | `https://www.professorbone.com` |
 | Default OG image | `src/seoData.js` line 3 | `/professor-bone-avatar.png` |
-| Valid page routes | `src/App.jsx` — `VALID_PAGES` | 10 routes |
+| Valid page routes | `src/App.jsx` — `VALID_PAGES` | 8 routes |
 | Valid paper sub-routes | `src/App.jsx` — `VALID_PAPERS` | 10 paper IDs |
 | Robots.txt | `public/robots.txt` | All crawlers allowed |
-| Sitemap | `public/sitemap.xml` | 20 URLs |
+| Sitemap | `public/sitemap.xml` | 18 URLs; verified update dates for the six main pages |
