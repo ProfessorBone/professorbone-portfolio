@@ -2,8 +2,8 @@ import Seo from "./Seo";
 import { SEO_ROUTES } from "../seoData";
 
 const STACK = [
-  "OpenClaw", "Claude API", "Ollama", "TypeScript", "Python", "MLX",
-  "Multi-Agent Systems", "Telegram API", "React", "GraphHopper", "Tailscale", "Obsidian",
+  "OpenClaw", "Ollama", "TypeScript", "Python", "MLX",
+  "Multi-Agent Systems", "GraphHopper", "Tailscale", "Harness Engineering", "Full Stack Development",
 ];
 
 export default function Hero({ setPage }) {
