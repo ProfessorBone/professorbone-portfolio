@@ -53,7 +53,7 @@ export default function Footer({ setPage }) {
       </div>
 
       <div className="pb-footer-bottom">
-        <span className="pb-footer-copy">© 2025 Clarence Downs · Professor Bone Lab · JHU</span>
+        <span className="pb-footer-copy">© {new Date().getFullYear()} Clarence Downs · Professor Bone Lab · JHU</span>
         <div className="pb-footer-legal">
           <span>Privacy</span>
           <span>Terms</span>
