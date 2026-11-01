@@ -1,28 +1,54 @@
-.nav-brand {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.nav-radio {
+  position: relative;
+  display: block;
   flex-shrink: 0;
-  width: 116px;
-  min-height: 48px;
+  align-self: flex-start;
+  width: 280px;
+  aspect-ratio: 2057 / 765;
+  margin-top: -4px;
   margin-right: 24px;
   border-radius: 5px;
   text-decoration: none;
 }
-.nav-brand img {
+.nav-radio img {
   display: block;
-  width: 106px;
+  width: 100%;
   height: auto;
-  filter: drop-shadow(0 0 3px rgba(0,212,255,0.65)) drop-shadow(0 0 9px rgba(155,77,255,0.3));
+  filter: drop-shadow(0 0 2px rgba(0,212,255,0.25));
   transition: filter 180ms ease;
 }
-.nav-brand:hover img, .nav-brand:focus-visible img {
-  filter: drop-shadow(0 0 4px rgba(0,212,255,0.9)) drop-shadow(0 0 13px rgba(155,77,255,0.55));
+.nav-radio:hover img, .nav-radio:focus-visible img {
+  filter: drop-shadow(0 0 4px rgba(0,212,255,0.6));
 }
-.nav-brand:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.nav-radio:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.nav-radio-light { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.nav-radio-light circle { animation: radio-light-pulse 2s ease-in-out infinite; }
+@keyframes radio-light-pulse { 0%, 100% { opacity: 0; } 50% { opacity: 0.7; } }
+.nav-radio-label {
+  position: absolute;
+  left: 8.15%;
+  top: 28.3%;
+  width: 17.5%;
+  height: 16.3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1px;
+  background: #061323;
+  color: #c6f7ff;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 0.95;
+  text-align: center;
+  text-shadow: 0 0 5px rgba(0,212,255,0.8);
+  transition: color 180ms ease, background 180ms ease;
+}
+.nav-radio:hover .nav-radio-label, .nav-radio:focus-visible .nav-radio-label { color: #fff; background: #09253b; }
 .nav-hamburger { display: none; }
 .nav-mobile-menu { display: none; }
 @media (max-width: 900px) {
+  .nav-radio { margin-right: 12px; }
   .nav-desktop { display: none; }
   .nav-hamburger {
     display: flex; flex-direction: column; justify-content: center; gap: 5px;
@@ -44,6 +70,11 @@
   .nav-mobile-links .nav-mobile-cta { margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.14); }
   .nav-hamburger:focus-visible, .nav-mobile-links a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
 }
+@media (max-width: 380px) {
+  .nav-radio { width: 230px; margin-top: 0; margin-right: 6px; }
+  .nav-radio-label { font-size: 9px; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .nav-brand img { transition: none; }
+  .nav-radio img, .nav-radio-label { transition: none; }
+  .nav-radio-light circle { animation: none; }
 }

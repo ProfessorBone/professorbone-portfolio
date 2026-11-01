@@ -15,8 +15,19 @@ export default function Nav({ page, setPage }) {
   return (
     <>
       <nav>
-        <a className="nav-brand" href="/" aria-label="Professor Bone home" onClick={(e) => go("home", e)}>
-          <img src="/cb-microphone-mark.svg" alt="" width="116" height="48" />
+        <a className="nav-radio" href="/contact" aria-label="Let's Talk — contact Professor Bone" onClick={(e) => go("contact", e)}>
+          <img src="/cb-radio-header.png" alt="" width="2057" height="765" />
+          <svg className="nav-radio-light" viewBox="0 0 2057 765" aria-hidden="true">
+            <defs>
+              <radialGradient id="radio-light-shade">
+                <stop offset="0" stopColor="#050a14" />
+                <stop offset="0.57" stopColor="#050a14" />
+                <stop offset="1" stopColor="#050a14" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+            <circle cx="598" cy="274" r="47" fill="url(#radio-light-shade)" />
+          </svg>
+          <span className="nav-radio-label" aria-hidden="true">Let’s<br />Talk</span>
         </a>
         {/* ── Desktop links ── */}
         <ul className="nav-links nav-desktop">
@@ -31,11 +42,6 @@ export default function Nav({ page, setPage }) {
               </a>
             </li>
           ))}
-          <li>
-            <a className="nav-cta" href="/contact" onClick={(e) => go("contact", e)}>
-              Let's Talk
-            </a>
-          </li>
         </ul>
 
         {/* ── Hamburger button (mobile only) ── */}

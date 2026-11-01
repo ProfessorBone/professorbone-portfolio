@@ -48,11 +48,12 @@ export default function App() {
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
-  // Full-screen immersive pages — footer included, no nav
+  // Immersive project pages share the site-wide header and footer.
   if (page === "continuum") {
     return (
       <>
         <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /><div className="orb orb-3" /></div>
+        <Nav page="projects" setPage={navigate} />
         <Continuum setPage={navigate} />
         <Footer setPage={navigate} />
       </>
@@ -63,6 +64,7 @@ export default function App() {
     return (
       <>
         <div className="bg-layer"><div className="orb orb-1" /><div className="orb orb-2" /><div className="orb orb-3" /></div>
+        <Nav page="projects" setPage={navigate} />
         <FreightMind setPage={navigate} />
         <Footer setPage={navigate} />
       </>
