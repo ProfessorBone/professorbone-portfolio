@@ -65,9 +65,9 @@ export default function Hero({ setPage }) {
         </div>
       </div>
 
-      {/* ── Core stack bubbles ── */}
+      {/* ── Tools and practices bubbles ── */}
       <div className="hero-stack" style={{animation:"slideUp 0.8s ease 0.9s both"}}>
-        <div className="hero-stack-label">Core Stack</div>
+        <div className="hero-stack-label">Tools &amp; Practices</div>
         <div className="hero-chips hero-bubbles">
           {STACK.map(c => (
             <span key={c} className="chip">{c}</span>
