@@ -63,26 +63,33 @@ export default function Research({ initialPaper = null, setPage }) {
   return (
     <main className="inner-section crc-research" aria-labelledby="research-heading">
       <Seo {...SEO_ROUTES.research} />
-      <header className="crc-header">
+      <header className="crc-panel crc-header">
+        <div className="crc-header-title">
         <div className="section-tag">04 — Research</div>
-        <h1 className="section-heading" id="research-heading">Current<br />Research</h1>
+        <h1 className="section-heading" id="research-heading">Current Research</h1>
         <p className="crc-kicker">Constitutional Runtime Computation</p>
+        </div>
+        <div className="crc-header-body">
         <p className="crc-intro">
           My current research centers on how AI systems govern the passage from reasoning to action,
           and how the body of research around that question can grow coherently.
         </p>
         <div className="crc-status"><span aria-hidden="true" />Conceptual architecture · Ongoing research</div>
-      </header>
-
       <nav className="crc-contents" aria-label="On this page">
         <a href="#crc-architecture">The architecture <span aria-hidden="true">↗</span></a>
+        <a href="#crc-companions">The companion work <span aria-hidden="true">↗</span></a>
         <a href="#crc-corpus">The corpus <span aria-hidden="true">↗</span></a>
         <a href="#crc-open-questions">Open questions <span aria-hidden="true">↗</span></a>
       </nav>
+        </div>
+      </header>
 
-      <section className="crc-section" id="crc-architecture" aria-labelledby="crc-architecture-heading">
+      <section className="crc-panel crc-section" id="crc-architecture" aria-labelledby="crc-architecture-heading">
+        <div className="crc-section-heading">
         <div className="crc-section-label">01 / The central question</div>
         <h2 id="crc-architecture-heading">When may an agent’s reasoning become an actual effect?</h2>
+        </div>
+        <div className="crc-section-body">
         <p>
           Building AEGIS raised a practical question: how could an AI-assisted system support a
           practitioner’s work while keeping her authority enforceable? That question helped shape
@@ -116,11 +123,15 @@ export default function Research({ initialPaper = null, setPage }) {
           </p>
         </aside>
         <a className="crc-text-link" href="/projects" onClick={(event) => go("projects", event)}>How AEGIS informed the research <span aria-hidden="true">→</span></a>
+        </div>
       </section>
 
-      <section className="crc-section" aria-labelledby="crc-companions-heading">
+      <section className="crc-panel crc-section" id="crc-companions" aria-labelledby="crc-companions-heading">
+        <div className="crc-section-heading">
         <div className="crc-section-label">02 / Beyond the core paper</div>
         <h2 id="crc-companions-heading">Following authority through the system.</h2>
+        </div>
+        <div className="crc-section-body">
         <p>
           The core argument raises further questions wherever an agent encounters information,
           invokes a capability, or continues a task. Companion papers examine those surfaces and
@@ -131,11 +142,15 @@ export default function Research({ initialPaper = null, setPage }) {
             <div key={name}><dt>{name}</dt><dd>{question}</dd></div>
           ))}
         </dl>
+        </div>
       </section>
 
-      <section className="crc-section" id="crc-corpus" aria-labelledby="crc-corpus-heading">
+      <section className="crc-panel crc-section" id="crc-corpus" aria-labelledby="crc-corpus-heading">
+        <div className="crc-section-heading">
         <div className="crc-section-label">03 / Constitutional Corpus Engineering</div>
         <h2 id="crc-corpus-heading">How does a growing body of research stay coherent?</h2>
+        </div>
+        <div className="crc-section-body">
         <p>
           As CRC expanded, maintaining the relationships between its papers became an engineering
           problem of its own. Definitions could drift. Two documents could appear to own the same
@@ -176,11 +191,15 @@ export default function Research({ initialPaper = null, setPage }) {
             </p></div>
           </details>
         </div>
+        </div>
       </section>
 
-      <section className="crc-section" id="crc-open-questions" aria-labelledby="crc-open-heading">
+      <section className="crc-panel crc-section" id="crc-open-questions" aria-labelledby="crc-open-heading">
+        <div className="crc-section-heading">
         <div className="crc-section-label">04 / The research frontier</div>
         <h2 id="crc-open-heading">What remains open.</h2>
+        </div>
+        <div className="crc-section-body">
         <p>
           CRC is a developing conceptual architecture. Formal verification of a deployed substrate
           remains future work. Central questions include:
@@ -190,11 +209,12 @@ export default function Research({ initialPaper = null, setPage }) {
           <li>How can a deployed governing runtime be verified as its rules and operating conditions evolve?</li>
           <li>How can the architecture distinguish an incomplete rule from a judgment that cannot be reduced to a rule?</li>
         </ul>
-      </section>
       <div className="crc-conversation">
         <p>Interested in the architecture or the corpus methodology?</p>
         <a className="crc-text-link" href="/contact" onClick={(event) => go("contact", event)}>Let’s talk about the research <span aria-hidden="true">→</span></a>
       </div>
+        </div>
+      </section>
     </main>
   );
 }
