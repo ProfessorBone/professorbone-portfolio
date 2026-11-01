@@ -61,14 +61,14 @@ export const SEO_ROUTES = {
   },
 
   research: {
-    title: 'Research — Agentic AI Papers & Frameworks | Professor Bone Lab',
+    title: 'Current Research — Constitutional Runtime Computation | Professor Bone',
     description:
-      'Original research on agentic AI architecture, epistemic governance, cognitive limits, and multi-agent evaluation. GGIB-M benchmark and peer papers from Professor Bone Lab at JHU.',
+      'Constitutional Runtime Computation: ongoing research into governed AI agent actions and the creation, maintenance, and extension of a coherent technical corpus.',
     canonical: '/research',
     structuredData: {
       '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      name: 'Research — Agentic AI Papers & Frameworks',
+      '@type': 'WebPage',
+      name: 'Current Research — Constitutional Runtime Computation',
       url: `${BASE_URL}/research`,
       author: PERSON_REF,
     },

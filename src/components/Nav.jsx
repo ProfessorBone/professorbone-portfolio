@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../nav.css";
 
 export default function Nav({ page, setPage }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -38,6 +39,8 @@ export default function Nav({ page, setPage }) {
           className={`nav-hamburger ${menuOpen ? "nav-hamburger-open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
         >
           <span />
           <span />
@@ -46,7 +49,7 @@ export default function Nav({ page, setPage }) {
       </nav>
 
       {/* ── Mobile slide-down menu ── */}
-      <div className={`nav-mobile-menu ${menuOpen ? "nav-mobile-menu-open" : ""}`}>
+      <div id="mobile-navigation" hidden={!menuOpen} className={`nav-mobile-menu ${menuOpen ? "nav-mobile-menu-open" : ""}`}>
         <ul className="nav-mobile-links">
           {links.map((l) => (
             <li key={l}>

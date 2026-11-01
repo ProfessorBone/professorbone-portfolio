@@ -36,8 +36,7 @@ export default function Footer({ setPage }) {
           </ul>
           <div className="pb-footer-col-label">Research</div>
           <ul className="pb-footer-nav">
-            <li><a href="/research" className="pb-footer-link" onClick={(e) => go("research", e)}>Papers &amp; Frameworks</a></li>
-            <li><a href="/research" className="pb-footer-link" onClick={(e) => go("research", e)}>GGIB-M Benchmark</a></li>
+            <li><a href="/research" className="pb-footer-link" onClick={(e) => go("research", e)}>Current Research · CRC</a></li>
           </ul>
         </div>
 

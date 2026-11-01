@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Seo from "./Seo";
 import { SEO_ROUTES } from "../seoData";
 import AgentStateFramework from "./papers/AgentStateFramework";
@@ -13,201 +12,189 @@ import GGIBPart5 from "./papers/GGIBPart5";
 import GGIBPart6 from "./papers/GGIBPart6";
 import "../paper.css";
 import "../paper-ggib.css";
+import "../research.css";
 
+// Preserve previously published paper URLs independently of the current overview.
 const PAPER_COMPONENTS = {
-  "agent-state":  AgentStateFramework,
-  "orchestrator": OrchestratorEpistemicCapture,
-  "cognitive":    CognitiveHorizon,
-  "epistemic":    EpistemicGovernance,
-  "ggib-1":       GGIBPart1,
-  "ggib-2":       GGIBPart2,
-  "ggib-3":       GGIBPart3,
-  "ggib-4":       GGIBPart4,
-  "ggib-5":       GGIBPart5,
-  "ggib-6":       GGIBPart6,
+  "agent-state": AgentStateFramework,
+  orchestrator: OrchestratorEpistemicCapture,
+  cognitive: CognitiveHorizon,
+  epistemic: EpistemicGovernance,
+  "ggib-1": GGIBPart1,
+  "ggib-2": GGIBPart2,
+  "ggib-3": GGIBPart3,
+  "ggib-4": GGIBPart4,
+  "ggib-5": GGIBPart5,
+  "ggib-6": GGIBPart6,
 };
 
+const CYCLE = [
+  { name: "Observe", actor: "Agent", description: "Receive the context the governing system makes available." },
+  { name: "Reason", actor: "Agent", description: "Work through the task within that context." },
+  { name: "Submit", actor: "Agent", description: "Propose a typed transition for adjudication." },
+  { name: "Resolve", actor: "Runtime", description: "Determine whether the proposed transition may occur." },
+];
+
+const SURFACES = [
+  { name: "Memory & retrieval", question: "What may the system remember, and how may that record shape what an agent sees next?" },
+  { name: "Tools & effects", question: "Who may authorize a tool invocation, and when may its result affect governed state?" },
+  { name: "Task continuity", question: "Who owns the record of what remains, what may happen next, and when a task is complete?" },
+  { name: "Authority & drift", question: "Who may change the governing standards, and how can the system detect when they stop holding?" },
+];
+
 export default function Research({ initialPaper = null, setPage }) {
-  const [ggibOpen, setGgibOpen] = useState(false);
-  const [activePaper, setActivePaper] = useState(initialPaper);
-
-  // Sync active paper when navigating via browser back/forward
-  useEffect(() => {
-    setActivePaper(initialPaper);
-  }, [initialPaper]);
-
-  function openPaper(id) {
-    setActivePaper(id);
-    if (setPage) setPage(`research/${id}`);
-  }
-
-  function closePaper() {
-    setActivePaper(null);
-    if (setPage) setPage("research");
-  }
-
-  // ── Individual paper view ──
-  if (activePaper && PAPER_COMPONENTS[activePaper]) {
-    const PaperComponent = PAPER_COMPONENTS[activePaper];
-    const paperSeo = SEO_ROUTES[`research/${activePaper}`];
+  if (initialPaper && PAPER_COMPONENTS[initialPaper]) {
+    const PaperComponent = PAPER_COMPONENTS[initialPaper];
+    const paperSeo = SEO_ROUTES[`research/${initialPaper}`];
     return (
       <>
         {paperSeo && <Seo {...paperSeo} />}
-        <PaperComponent onBack={closePaper} />
+        <PaperComponent onBack={() => setPage?.("research")} />
       </>
     );
   }
 
-  // ── Research listing ──
+  function go(page, event) {
+    if (!setPage || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+    event.preventDefault();
+    setPage(page);
+  }
+
   return (
-    <div className="inner-section">
+    <main className="inner-section crc-research" aria-labelledby="research-heading">
       <Seo {...SEO_ROUTES.research} />
-      <div className="section-tag">04 — Research</div>
-      <h1 className="section-heading">Papers &amp;<br />Frameworks</h1>
-      <p className="section-sub">
-        Original research produced under the <strong>Professor Bone Lab</strong> identity at JHU.
-        Writing voice: problem-statement-first, direct declarative, no hedging.
-      </p>
+      <header className="crc-header">
+        <div className="section-tag">04 — Research</div>
+        <h1 className="section-heading" id="research-heading">Current<br />Research</h1>
+        <p className="crc-kicker">Constitutional Runtime Computation</p>
+        <p className="crc-intro">
+          My current research centers on how AI systems govern the passage from reasoning to action,
+          and how the body of research around that question can grow coherently.
+        </p>
+        <div className="crc-status"><span aria-hidden="true" />Conceptual architecture · Ongoing research</div>
+      </header>
 
-      <div className="research-list">
+      <nav className="crc-contents" aria-label="On this page">
+        <a href="#crc-architecture">The architecture <span aria-hidden="true">↗</span></a>
+        <a href="#crc-corpus">The corpus <span aria-hidden="true">↗</span></a>
+        <a href="#crc-open-questions">Open questions <span aria-hidden="true">↗</span></a>
+      </nav>
 
-        {/* ── CARD 01: GGIB-M Benchmark ── */}
-        <div
-          className="research-card ggib-card"
-          onClick={() => setGgibOpen(!ggibOpen)}
-          style={{ cursor: "pointer" }}
-        >
-          <div className="ggib-header">
-            <div className="research-num">01</div>
-            <div className="research-content">
-              <div className="research-title">
-                GGIB-M Benchmark Specification
-                <span className="ggib-badge">6 PARTS</span>
-              </div>
-              <div className="research-meta">
-                Governed General Intelligence Benchmark · Metacognition Track · w/ Caroline Brooks · Kaggle
-              </div>
-              <div className="research-abstract">
-                Full six-part benchmark specification targeting epistemic regulation in AI behavior.
-                Evaluates whether AI systems can accurately assess the boundaries of their own knowledge
-                under adversarial and standard conditions.
-              </div>
-            </div>
-            <div className={`research-arrow ${ggibOpen ? "open" : ""}`}>↓</div>
-          </div>
+      <section className="crc-section" id="crc-architecture" aria-labelledby="crc-architecture-heading">
+        <div className="crc-section-label">01 / The central question</div>
+        <h2 id="crc-architecture-heading">When may an agent’s reasoning become an actual effect?</h2>
+        <p>
+          Building AEGIS raised a practical question: how could an AI-assisted system support a
+          practitioner’s work while keeping her authority enforceable? That question helped shape
+          Constitutional Runtime Computation, or CRC.
+        </p>
+        <p>
+          CRC proposes a runtime architecture in which an agent reasons and submits a typed proposal.
+          A separate governing runtime determines whether that transition is authorized from the
+          system’s current state. The proposal must pass through that boundary before it can become
+          an authorized effect.
+        </p>
+        <figure className="crc-cycle">
+          <figcaption>The proposed agent loop <span>ORSR</span></figcaption>
+          <ol>
+            {CYCLE.map(({ name, actor, description }, index) => (
+              <li key={name} className={actor === "Runtime" ? "crc-runtime-step" : undefined}>
+                <span className="crc-step-number">0{index + 1}</span>
+                <strong>{name}</strong>
+                <span className="crc-step-actor">{actor}</span>
+                <p>{description}</p>
+              </li>
+            ))}
+          </ol>
+        </figure>
+        <aside className="crc-distinction" aria-label="An important distinction">
+          <strong>Authorization and correctness are separate questions.</strong>
+          <p>
+            A procedurally legitimate transition can still carry an incorrect or harmful conclusion.
+            CRC investigates the conditions under which an effect is permitted; content quality
+            remains a separate responsibility.
+          </p>
+        </aside>
+        <a className="crc-text-link" href="/projects" onClick={(event) => go("projects", event)}>How AEGIS informed the research <span aria-hidden="true">→</span></a>
+      </section>
 
-          {ggibOpen && (
-            <div className="ggib-parts" onClick={(e) => e.stopPropagation()}>
-              <div className="ggib-divider" />
+      <section className="crc-section" aria-labelledby="crc-companions-heading">
+        <div className="crc-section-label">02 / Beyond the core paper</div>
+        <h2 id="crc-companions-heading">Following authority through the system.</h2>
+        <p>
+          The core argument raises further questions wherever an agent encounters information,
+          invokes a capability, or continues a task. Companion papers examine those surfaces and
+          the relationships between them.
+        </p>
+        <dl className="crc-surfaces">
+          {SURFACES.map(({ name, question }) => (
+            <div key={name}><dt>{name}</dt><dd>{question}</dd></div>
+          ))}
+        </dl>
+      </section>
 
-              {[
-                { id: "ggib-1", label: "Part 1", title: "Critical Analysis of the Metacognition Evaluation Design Space" },
-                { id: "ggib-2", label: "Part 2", title: "Metacognition Task Family Design" },
-                { id: "ggib-3", label: "Part 3", title: "Formal Scoring Framework" },
-                { id: "ggib-4", label: "Part 4", title: "Human Baseline Design" },
-                { id: "ggib-5", label: "Part 5", title: "Contamination Resistance and Gaming Defenses" },
-                { id: "ggib-6", label: "Part 6", title: "Kaggle-Ready Deliverables" },
-              ].map(({ id, label, title }) => (
-                <a
-                  key={id}
-                  className="ggib-part"
-                  href={`/research/${id}`}
-                  onClick={(e) => { e.preventDefault(); openPaper(id); }}
-                >
-                  <span className="ggib-part-num">{label}</span>
-                  <span className="ggib-part-title">{title}</span>
-                  <span className="ggib-dl" style={{ color: "var(--cyan)" }}>Read →</span>
-                </a>
-              ))}
-            </div>
-          )}
+      <section className="crc-section" id="crc-corpus" aria-labelledby="crc-corpus-heading">
+        <div className="crc-section-label">03 / Constitutional Corpus Engineering</div>
+        <h2 id="crc-corpus-heading">How does a growing body of research stay coherent?</h2>
+        <p>
+          As CRC expanded, maintaining the relationships between its papers became an engineering
+          problem of its own. Definitions could drift. Two documents could appear to own the same
+          concept. A revision could repair one paper while leaving dependent papers inconsistent.
+        </p>
+        <p>
+          The resulting work on Constitutional Corpus Engineering examines how a technical corpus
+          can make ownership, authority, dependencies, versions, and unresolved questions explicit.
+          The method grows from the CRC case study; its usefulness beyond that setting requires
+          further validation.
+        </p>
+        <div className="crc-corpus-practices">
+          <details>
+            <summary>Creating the corpus <span aria-hidden="true">+</span></summary>
+            <div className="crc-detail-body"><p>
+              Give each artifact a declared purpose and scope. Identify which source owns a
+              definition, which papers consume it, and where a proposed contribution extends
+              existing work. Explanations, navigation, evidence, and governing definitions carry
+              different kinds of authority.
+            </p></div>
+          </details>
+          <details>
+            <summary>Maintaining coherence <span aria-hidden="true">+</span></summary>
+            <div className="crc-detail-body"><p>
+              Review a change alongside the artifacts that depend on it. Keep current versions
+              identifiable, preserve historical records, and make unresolved dependencies visible.
+              Writing a proposed solution, publishing its specification, and demonstrating closure
+              are distinct steps.
+            </p></div>
+          </details>
+          <details>
+            <summary>Entering the corpus <span aria-hidden="true">+</span></summary>
+            <div className="crc-detail-body"><p>
+              Readers need an orientation: where to begin, which sources govern, and what remains
+              open. New contributions need a declared role, authority boundary, dependency analysis,
+              and review before admission. Settled material, recognized unresolved dependencies,
+              and exploratory research follow different routes.
+            </p></div>
+          </details>
         </div>
+      </section>
 
-        {/* ── CARD 02: Orchestrator Epistemic Capture ── */}
-        <a
-          className="research-card"
-          href="/research/orchestrator"
-          onClick={(e) => { e.preventDefault(); openPaper("orchestrator"); }}
-        >
-          <div className="research-num">02</div>
-          <div className="research-content">
-            <div className="research-title">Orchestrator Epistemic Capture</div>
-            <div className="research-meta">Professor Bone Lab · JHU · Agentic AI Series · v1.2</div>
-            <div className="research-abstract">
-              Explores the failure mode in which an orchestrating agent's belief state becomes the
-              primary constraint on downstream agent behavior, limiting system adaptability and
-              introducing systematic bias into multi-agent pipelines.
-            </div>
-          </div>
-          <div className="research-arrow" style={{ color: "var(--cyan)", fontSize: "0.75rem", letterSpacing: "0.06em" }}>
-            Read →
-          </div>
-        </a>
-
-        {/* ── CARD 03: Cognitive Horizon ── */}
-        <a
-          className="research-card"
-          href="/research/cognitive"
-          onClick={(e) => { e.preventDefault(); openPaper("cognitive"); }}
-        >
-          <div className="research-num">03</div>
-          <div className="research-content">
-            <div className="research-title">Cognitive Horizon</div>
-            <div className="research-meta">Professor Bone Lab · JHU · Context Theory · v6</div>
-            <div className="research-abstract">
-              A formal framework for understanding the temporal and contextual limits of AI agent
-              reasoning — where knowledge degrades, where attention saturates, and how systems
-              should behave at the edge of their cognitive horizon.
-            </div>
-          </div>
-          <div className="research-arrow" style={{ color: "var(--cyan)", fontSize: "0.75rem", letterSpacing: "0.06em" }}>
-            Read →
-          </div>
-        </a>
-
-        {/* ── CARD 04: Agent State Framework ── */}
-        <a
-          className="research-card"
-          href="/research/agent-state"
-          onClick={(e) => { e.preventDefault(); openPaper("agent-state"); }}
-        >
-          <div className="research-num">04</div>
-          <div className="research-content">
-            <div className="research-title">Agent State Framework</div>
-            <div className="research-meta">Professor Bone Lab · JHU · Architecture Series · v3</div>
-            <div className="research-abstract">
-              Defines a formal state model for autonomous AI agents — covering belief states, goal
-              hierarchies, action affordances, and the transitions between operational modes in
-              governed multi-agent systems.
-            </div>
-          </div>
-          <div className="research-arrow" style={{ color: "var(--cyan)", fontSize: "0.75rem", letterSpacing: "0.06em" }}>
-            Read →
-          </div>
-        </a>
-
-        {/* ── CARD 05: Epistemic Governance Deep Research ── */}
-        <a
-          className="research-card"
-          href="/research/epistemic"
-          onClick={(e) => { e.preventDefault(); openPaper("epistemic"); }}
-        >
-          <div className="research-num">05</div>
-          <div className="research-content">
-            <div className="research-title">Epistemic Governance: Deep Research</div>
-            <div className="research-meta">Professor Bone Lab · JHU · Governance Series</div>
-            <div className="research-abstract">
-              A deep research document examining how epistemic governance principles can be embedded
-              into multi-agent AI architectures — addressing how systems maintain accurate, bounded,
-              and auditable belief states under uncertainty.
-            </div>
-          </div>
-          <div className="research-arrow" style={{ color: "var(--cyan)", fontSize: "0.75rem", letterSpacing: "0.06em" }}>
-            Read →
-          </div>
-        </a>
-
+      <section className="crc-section" id="crc-open-questions" aria-labelledby="crc-open-heading">
+        <div className="crc-section-label">04 / The research frontier</div>
+        <h2 id="crc-open-heading">What remains open.</h2>
+        <p>
+          CRC is a developing conceptual architecture. Formal verification of a deployed substrate
+          remains future work. Central questions include:
+        </p>
+        <ul className="crc-questions">
+          <li>How can human judgment become computable rules without being distorted or frozen in place?</li>
+          <li>How can a deployed governing runtime be verified as its rules and operating conditions evolve?</li>
+          <li>How can the architecture distinguish an incomplete rule from a judgment that cannot be reduced to a rule?</li>
+        </ul>
+      </section>
+      <div className="crc-conversation">
+        <p>Interested in the architecture or the corpus methodology?</p>
+        <a className="crc-text-link" href="/contact" onClick={(event) => go("contact", event)}>Let’s talk about the research <span aria-hidden="true">→</span></a>
       </div>
-    </div>
+    </main>
   );
 }
