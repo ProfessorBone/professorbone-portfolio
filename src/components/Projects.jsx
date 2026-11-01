@@ -38,7 +38,7 @@ export default function Projects({ setPage }) {
           </div>
           <div className="proj-body">
             <p>
-              Newark AI begins with a personal responsibility to the place we live and the people we share it
+              <a className="proj-inline-link" href="https://www.newarkai.org/" target="_blank" rel="noopener noreferrer">Newark AI</a> begins with a personal responsibility to the place we live and the people we share it
               with. Newark’s residents are our neighbors, our elders, our youth, our friends, and our
               colleagues. As AI changes education, work, public services, and everyday life, we believe we
               have a responsibility to help our community understand those changes and participate in shaping them.
