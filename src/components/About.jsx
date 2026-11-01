@@ -55,7 +55,6 @@ export default function About() {
             ["LAB",    "Professor Bone Lab"],
             ["NOW",    "Newark AI · Founder"],
             ["RESEARCH", "Constitutional Runtime Computation (CRC)"],
-            ["TARGET", "Walmart Global Tech"],
           ].map(([k, v], i) => (
             <div key={i} className="identity-detail">
               <span>{k}</span> {v}

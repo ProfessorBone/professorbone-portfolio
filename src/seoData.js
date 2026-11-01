@@ -82,9 +82,9 @@ export const SEO_ROUTES = {
   },
 
   contact: {
-    title: "Let's Talk — AI Engineering, Research & Collaboration | Professor Bone",
+    title: "Let's Talk — Collaborative Research & Discussion | Professor Bone",
     description:
-      'Reach out to Clarence Downs for AI engineering roles, research collaboration, speaking, or consulting. Open to serious opportunities.',
+      'Contact Clarence Downs for collaborative research, thoughtful discussion, and serious inquiries about AI systems and governance.',
     canonical: '/contact',
     structuredData: {
       '@context': 'https://schema.org',

@@ -1,32 +1,35 @@
-const contacts = [
-  { label: "Email",    title: "clarenced2@icloud.com",            desc: "Best for hiring inquiries and research collaboration.", href: "mailto:clarenced2@icloud.com" },
-  { label: "LinkedIn", title: "linkedin.com/in/clarencedowns",     desc: "Connect for professional networking and career opportunities.",             href: "https://www.linkedin.com/in/clarencedowns/" },
-  { label: "GitHub",   title: "github.com/ProfessorBone",          desc: "Source code, project repositories, and open research artifacts.",           href: "https://github.com/ProfessorBone" },
-];
-
 import Seo from "./Seo";
 import { SEO_ROUTES } from "../seoData";
 
+const contacts = [
+  { label: "Email", title: "clarenced2@icloud.com", href: "mailto:clarenced2@icloud.com" },
+  { label: "LinkedIn", title: "linkedin.com/in/clarencedowns", href: "https://www.linkedin.com/in/clarencedowns/" },
+  { label: "GitHub", title: "github.com/ProfessorBone", href: "https://github.com/ProfessorBone" },
+];
+
 export default function Contact() {
   return (
-    <div className="inner-section" style={{maxWidth:"640px"}}>
+    <main className="inner-section frosted-page contact-page" aria-labelledby="contact-heading">
       <Seo {...SEO_ROUTES.contact} />
-      <div className="section-tag">07 — Contact</div>
-      <h1 className="section-heading">Let's<br />Connect</h1>
-      <p className="section-sub">
-        Hiring for AI engineering roles or interested in research collaboration?
-        Reach out — I read everything.
-      </p>
-      <div style={{display:"flex",flexDirection:"column",gap:"14px"}}>
+      <header className="frosted-card frosted-header frosted-row">
+        <div>
+          <div className="section-tag">07 — Contact</div>
+          <h1 className="section-heading" id="contact-heading">Let’s Talk</h1>
+        </div>
+        <p className="section-sub">
+          I welcome collaborative research, thoughtful discussion, and serious inquiries
+          about AI systems and governance.
+        </p>
+      </header>
+      <div className="contact-methods">
         {contacts.map((c) => (
           <a key={c.label} href={c.href} target={c.href.startsWith("mailto") ? "_self" : "_blank"} rel="noopener noreferrer"
-            className="glass-card" style={{textDecoration:"none",display:"block",cursor:"pointer"}}>
+            className="frosted-card contact-method">
             <div className="card-label">{c.label}</div>
-            <div className="card-title">{c.title}</div>
-            <div className="card-desc">{c.desc}</div>
+            <h2 className="card-title">{c.title}</h2>
           </a>
         ))}
       </div>
-    </div>
+    </main>
   );
 }

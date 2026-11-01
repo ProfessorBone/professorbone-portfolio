@@ -1,4 +1,4 @@
-/* About, Projects, and Education share the Research page's card treatment. */
+/* The main content pages share the Research page's card treatment. */
 .page-content > .inner-section.frosted-page {
   --page-card-filter: var(--card-filter);
   --page-card-copy: #c1cce0;
@@ -56,6 +56,10 @@
 .frosted-page .edu-detail { line-height: 1.7; align-items: baseline; flex-wrap: wrap; }
 .frosted-page .edu-detail a { overflow-wrap: anywhere; color: var(--cyan) !important; }
 .frosted-page .edu-card::after { display: none; }
+.contact-methods { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px; }
+.contact-method { display: block; color: var(--text-primary); text-decoration: none; }
+.contact-method .card-label { color: #a1b1cc; }
+.contact-method .card-title { font-size: 1rem; line-height: 1.6; margin: 0; overflow-wrap: anywhere; }
 .page-content .frosted-page .frosted-card:focus-within {
   border-color: rgba(0,212,255,0.6);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 18px 42px rgba(0,0,0,0.4), 0 0 24px rgba(0,212,255,0.14);
@@ -69,11 +73,13 @@
   }
 }
 @media (max-width: 900px) {
+  .contact-methods { grid-template-columns: 1fr; }
   .page-content .frosted-page .frosted-row { grid-template-columns: 1fr; gap: 24px; }
   .page-content .frosted-page .frosted-card { padding: 32px; }
   .frosted-card-heading { padding-right: 0; border-right: 0; }
 }
 @media (max-width: 640px) {
+  .contact-methods { gap: 22px; }
   .page-content > .inner-section.frosted-page { width: calc(100% - 24px); gap: 22px; }
   .page-content .frosted-page .frosted-card { padding: 28px 20px; border-radius: 20px; }
   .page-content .frosted-page :is(.edu-grid,.projects-grid) { gap: 22px; }

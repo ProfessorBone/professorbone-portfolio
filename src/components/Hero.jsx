@@ -24,7 +24,7 @@ export default function Hero({ setPage }) {
           <div className="hero-card hero-card-id">
             <div className="hero-badge" style={{opacity:1,animation:"slideDown 0.7s ease 0.1s both"}}>
               <div className="pulse-dot" />
-              Open to AI Engineering Roles · 2025
+              AI Systems &amp; Research
             </div>
 
             <div className="hero-realname" style={{animation:"slideUp 0.8s ease 0.25s both"}}>
@@ -48,9 +48,9 @@ export default function Hero({ setPage }) {
         {/* ── RIGHT: three floating cards ── */}
         <div className="hero-col hero-col-right" style={{animation:"slideLeft 0.9s ease 0.7s both"}}>
           <div className="glass-card">
-            <div className="card-label">Career Path</div>
-            <div className="card-title">Operations → AI Engineering</div>
-            <div className="card-desc">UPS Mgmt (2017) · LaM Logistics LLC (2022)<br />Walmart Private Fleet (2025) · AI Engineer (now)</div>
+            <div className="card-label">Background</div>
+            <div className="card-title">Operations &amp; AI Engineering</div>
+            <div className="card-desc">UPS Mgmt (2017) · LaM Logistics LLC (2022)<br />Walmart Private Fleet (2025)</div>
           </div>
           <div className="glass-card">
             <div className="card-label">Active Builds</div>
